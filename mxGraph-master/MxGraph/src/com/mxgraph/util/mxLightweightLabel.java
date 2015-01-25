@@ -65,6 +65,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void validate()
 	{
 	}
@@ -73,6 +74,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void revalidate()
 	{
 	}
@@ -81,6 +83,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void repaint(long tm, int x, int y, int width, int height)
 	{
 	}
@@ -89,6 +92,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void repaint(Rectangle r)
 	{
 	}
@@ -97,6 +101,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	protected void firePropertyChange(String propertyName, Object oldValue,
 			Object newValue)
 	{
@@ -111,6 +116,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void firePropertyChange(String propertyName, byte oldValue,
 			byte newValue)
 	{
@@ -120,6 +126,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void firePropertyChange(String propertyName, char oldValue,
 			char newValue)
 	{
@@ -129,6 +136,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void firePropertyChange(String propertyName, short oldValue,
 			short newValue)
 	{
@@ -138,6 +146,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void firePropertyChange(String propertyName, int oldValue,
 			int newValue)
 	{
@@ -147,6 +156,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void firePropertyChange(String propertyName, long oldValue,
 			long newValue)
 	{
@@ -156,6 +166,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void firePropertyChange(String propertyName, float oldValue,
 			float newValue)
 	{
@@ -165,6 +176,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void firePropertyChange(String propertyName, double oldValue,
 			double newValue)
 	{
@@ -174,6 +186,7 @@ public class mxLightweightLabel extends JLabel
 	 * Overridden for performance reasons.
 	 * 
 	 */
+	@Override
 	public void firePropertyChange(String propertyName, boolean oldValue,
 			boolean newValue)
 	{

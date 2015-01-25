@@ -58,6 +58,7 @@ public interface mxIGraphModel
 		/**
 		 * Executes the change on the model.
 		 */
+		@Override
 		public abstract void execute();
 
 	}

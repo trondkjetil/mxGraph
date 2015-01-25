@@ -10,12 +10,9 @@ import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
 import javax.swing.ImageIcon;
-import javax.swing.UIManager;
-
 import org.w3c.dom.Document;
 
 import com.mxgraph.examples.swing.editor.BasicGraphEditor;
-import com.mxgraph.examples.swing.editor.EditorMenuBar;
 import com.mxgraph.examples.swing.editor.EditorPalette;
 import com.mxgraph.io.mxCodec;
 import com.mxgraph.model.mxCell;
@@ -24,8 +21,6 @@ import com.mxgraph.model.mxICell;
 import com.mxgraph.model.mxIGraphModel;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.util.mxGraphTransferable;
-import com.mxgraph.swing.util.mxSwingConstants;
-import com.mxgraph.util.mxConstants;
 import com.mxgraph.util.mxEvent;
 import com.mxgraph.util.mxEventObject;
 import com.mxgraph.util.mxEventSource.mxIEventListener;
@@ -57,12 +52,7 @@ public class GraphEditor extends BasicGraphEditor
 
 	//GraphEditor.class.getResource("/com/mxgraph/examples/swing/images/connector.gif");
 
-	public GraphEditor(mxGraphComponent component)
-	{
-		//mxGraph graf, mxGraphComponent graphComponent
-		this("mxGraph Editor", new CustomGraphComponent(component.getGraph()));
-		//this("mxGraph Editor",graphComponent);
-	}
+
 	
 	public GraphEditor()
 	{
@@ -103,6 +93,7 @@ public class GraphEditor extends BasicGraphEditor
 		// is clicked in the shape palette
 		shapesPalette.addListener(mxEvent.SELECT, new mxIEventListener()
 		{
+			@Override
 			public void invoke(Object sender, mxEventObject evt)
 			{
 				Object tmp = evt.getProperty("transferable");
@@ -503,6 +494,7 @@ public class GraphEditor extends BasicGraphEditor
 		 * is not a valid drop target and the cells are of the same
 		 * type (eg. both vertices or both edges). 
 		 */
+		@Override
 		public Object[] importCells(Object[] cells, double dx, double dy,
 				Object target, Point location)
 		{
@@ -562,6 +554,7 @@ public class GraphEditor extends BasicGraphEditor
 		/**
 		 * Prints out some useful information about the cell in the tooltip.
 		 */
+		@Override
 		public String getToolTipForCell(Object cell)
 		{
 			String tip = "<html>";
@@ -661,6 +654,7 @@ public class GraphEditor extends BasicGraphEditor
 		 * @param style
 		 * @return
 		 */
+		@Override
 		public Object createEdge(Object parent, String id, Object value,
 				Object source, Object target, String style)
 		{

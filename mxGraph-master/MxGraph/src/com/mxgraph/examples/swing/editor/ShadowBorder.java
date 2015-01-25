@@ -38,16 +38,19 @@ public class ShadowBorder implements Border, Serializable
 		insets = new Insets(0, 0, 2, 2);
 	}
 
+	@Override
 	public Insets getBorderInsets(Component c)
 	{
 		return insets;
 	}
 
+	@Override
 	public boolean isBorderOpaque()
 	{
 		return false;
 	}
 
+	@Override
 	public void paintBorder(Component c, Graphics g, int x, int y, int w, int h)
 	{
 		// choose which colors we want to use

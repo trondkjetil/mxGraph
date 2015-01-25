@@ -68,6 +68,7 @@ public class mxPanningHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
 		if (isEnabled() && !e.isConsumed() && graphComponent.isPanningEvent(e)
@@ -80,6 +81,7 @@ public class mxPanningHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		if (!e.isConsumed() && start != null)
@@ -102,6 +104,7 @@ public class mxPanningHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		if (!e.isConsumed() && start != null)

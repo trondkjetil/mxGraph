@@ -13,6 +13,7 @@ import com.mxgraph.view.mxGraph;
  */
 public class mxDoubleValCostFunction extends mxCostFunction
 {
+	@Override
 	public double getCost(mxCellState state)
 	{
 		//assumed future parameters

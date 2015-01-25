@@ -56,6 +56,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 	/**
 	 * 
 	 */
+	@Override
 	public void startElement(String uri, String localName, String qName,
 			Attributes atts) throws SAXException
 	{
@@ -74,6 +75,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 	{
 		handlers.put("save", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.save();
@@ -82,6 +84,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("restore", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.restore();
@@ -90,6 +93,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("scale", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.scale(Double.parseDouble(atts.getValue("scale")));
@@ -98,6 +102,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("translate", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.translate(Double.parseDouble(atts.getValue("dx")),
@@ -107,6 +112,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("rotate", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.rotate(Double.parseDouble(atts.getValue("theta")), atts
@@ -118,6 +124,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("strokewidth", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setStrokeWidth(Double.parseDouble(atts.getValue("width")));
@@ -126,6 +133,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("strokecolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setStrokeColor(atts.getValue("color"));
@@ -134,6 +142,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("dashed", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setDashed(atts.getValue("dashed").equals("1"));
@@ -142,6 +151,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("dashpattern", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setDashPattern(atts.getValue("pattern"));
@@ -150,6 +160,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("linecap", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setLineCap(atts.getValue("cap"));
@@ -158,6 +169,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("linejoin", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setLineJoin(atts.getValue("join"));
@@ -166,6 +178,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("miterlimit", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setMiterLimit(Double.parseDouble(atts.getValue("limit")));
@@ -174,6 +187,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("fontsize", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setFontSize(Double.parseDouble(atts.getValue("size")));
@@ -182,6 +196,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("fontcolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setFontColor(atts.getValue("color"));
@@ -190,6 +205,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("fontbackgroundcolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setFontBackgroundColor(atts.getValue("color"));
@@ -198,6 +214,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("fontbordercolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setFontBorderColor(atts.getValue("color"));
@@ -206,6 +223,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("fontfamily", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setFontFamily(atts.getValue("family"));
@@ -214,6 +232,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("fontstyle", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setFontStyle(Integer.parseInt(atts.getValue("style")));
@@ -222,6 +241,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("alpha", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setAlpha(Double.parseDouble(atts.getValue("alpha")));
@@ -230,6 +250,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("fillcolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setFillColor(atts.getValue("color"));
@@ -238,6 +259,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 		
 		handlers.put("shadowcolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setShadowColor(atts.getValue("color"));
@@ -246,6 +268,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 		
 		handlers.put("shadowalpha", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setShadowAlpha(Double.parseDouble(atts.getValue("alpha")));
@@ -254,6 +277,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 		
 		handlers.put("shadowoffset", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setShadowOffset(Double.parseDouble(atts.getValue("dx")),
@@ -263,6 +287,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("shadow", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setShadow(getValue(atts, "enabled", "1").equals("1"));
@@ -271,6 +296,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 		
 		handlers.put("gradient", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.setGradient(atts.getValue("c1"), atts.getValue("c2"),
@@ -286,6 +312,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("rect", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.rect(Double.parseDouble(atts.getValue("x")),
@@ -297,6 +324,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("roundrect", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.roundrect(Double.parseDouble(atts.getValue("x")),
@@ -310,6 +338,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("ellipse", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.ellipse(Double.parseDouble(atts.getValue("x")),
@@ -321,6 +350,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("image", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.image(Double.parseDouble(atts.getValue("x")),
@@ -336,6 +366,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("text", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.text(Double.parseDouble(atts.getValue("x")),
@@ -355,6 +386,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("begin", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.begin();
@@ -363,6 +395,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("move", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.moveTo(Double.parseDouble(atts.getValue("x")),
@@ -372,6 +405,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("line", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.lineTo(Double.parseDouble(atts.getValue("x")),
@@ -381,6 +415,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("quad", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.quadTo(Double.parseDouble(atts.getValue("x1")),
@@ -392,6 +427,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("curve", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.curveTo(Double.parseDouble(atts.getValue("x1")),
@@ -405,6 +441,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("close", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.close();
@@ -413,6 +450,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("stroke", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.stroke();
@@ -421,6 +459,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("fill", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.fill();
@@ -429,6 +468,7 @@ public class mxSaxOutputHandler extends DefaultHandler
 
 		handlers.put("fillstroke", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Attributes atts)
 			{
 				canvas.fillAndStroke();

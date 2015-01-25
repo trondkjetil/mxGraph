@@ -13,6 +13,7 @@ public class mxDoubleEllipseShape extends mxEllipseShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		super.paintShape(canvas, state);

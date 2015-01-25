@@ -250,6 +250,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#getRoot()
 	 */
+	@Override
 	public Object getRoot()
 	{
 		return root;
@@ -258,6 +259,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#setRoot(Object)
 	 */
+	@Override
 	public Object setRoot(Object root)
 	{
 		execute(new mxRootChange(this, root));
@@ -289,6 +291,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	{
 		return new mxUndoableEdit(this)
 		{
+			@Override
 			public void dispatch()
 			{
 				// LATER: Remove changes property (deprecated)
@@ -301,6 +304,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#cloneCells(Object[], boolean)
 	 */
+	@Override
 	public Object[] cloneCells(Object[] cells, boolean includeChildren)
 	{
 		Map<Object, Object> mapping = new Hashtable<Object, Object>();
@@ -400,6 +404,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#isAncestor(Object, Object)
 	 */
+	@Override
 	public boolean isAncestor(Object parent, Object child)
 	{
 		while (child != null && child != parent)
@@ -413,6 +418,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#contains(Object)
 	 */
+	@Override
 	public boolean contains(Object cell)
 	{
 		return isAncestor(getRoot(), cell);
@@ -421,6 +427,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#getParent(Object)
 	 */
+	@Override
 	public Object getParent(Object child)
 	{
 		return (child instanceof mxICell) ? ((mxICell) child).getParent()
@@ -430,6 +437,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#add(Object, Object, int)
 	 */
+	@Override
 	public Object add(Object parent, Object child, int index)
 	{
 		if (child != parent && parent != null && child != null)
@@ -525,6 +533,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#remove(Object)
 	 */
+	@Override
 	public Object remove(Object cell)
 	{
 		if (cell == root)
@@ -604,6 +613,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#getChildCount(Object)
 	 */
+	@Override
 	public int getChildCount(Object cell)
 	{
 		return (cell instanceof mxICell) ? ((mxICell) cell).getChildCount() : 0;
@@ -612,6 +622,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#getChildAt(Object, int)
 	 */
+	@Override
 	public Object getChildAt(Object parent, int index)
 	{
 		return (parent instanceof mxICell) ? ((mxICell) parent)
@@ -621,6 +632,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#getTerminal(Object, boolean)
 	 */
+	@Override
 	public Object getTerminal(Object edge, boolean isSource)
 	{
 		return (edge instanceof mxICell) ? ((mxICell) edge)
@@ -630,6 +642,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#setTerminal(Object, Object, boolean)
 	 */
+	@Override
 	public Object setTerminal(Object edge, Object terminal, boolean isSource)
 	{
 		boolean terminalChanged = terminal != getTerminal(edge, isSource);
@@ -858,6 +871,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#getEdgeCount(Object)
 	 */
+	@Override
 	public int getEdgeCount(Object cell)
 	{
 		return (cell instanceof mxICell) ? ((mxICell) cell).getEdgeCount() : 0;
@@ -866,6 +880,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#getEdgeAt(Object, int)
 	 */
+	@Override
 	public Object getEdgeAt(Object parent, int index)
 	{
 		return (parent instanceof mxICell) ? ((mxICell) parent)
@@ -875,6 +890,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#isVertex(Object)
 	 */
+	@Override
 	public boolean isVertex(Object cell)
 	{
 		return (cell instanceof mxICell) ? ((mxICell) cell).isVertex() : false;
@@ -883,6 +899,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#isEdge(Object)
 	 */
+	@Override
 	public boolean isEdge(Object cell)
 	{
 		return (cell instanceof mxICell) ? ((mxICell) cell).isEdge() : false;
@@ -891,6 +908,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#isConnectable(Object)
 	 */
+	@Override
 	public boolean isConnectable(Object cell)
 	{
 		return (cell instanceof mxICell) ? ((mxICell) cell).isConnectable()
@@ -900,6 +918,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#getValue(Object)
 	 */
+	@Override
 	public Object getValue(Object cell)
 	{
 		return (cell instanceof mxICell) ? ((mxICell) cell).getValue() : null;
@@ -908,6 +927,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#setValue(Object, Object)
 	 */
+	@Override
 	public Object setValue(Object cell, Object value)
 	{
 		execute(new mxValueChange(this, cell, value));
@@ -931,6 +951,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#getGeometry(Object)
 	 */
+	@Override
 	public mxGeometry getGeometry(Object cell)
 	{
 		return (cell instanceof mxICell) ? ((mxICell) cell).getGeometry()
@@ -940,6 +961,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#setGeometry(Object, mxGeometry)
 	 */
+	@Override
 	public mxGeometry setGeometry(Object cell, mxGeometry geometry)
 	{
 		if (geometry != getGeometry(cell))
@@ -965,6 +987,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#getStyle(Object)
 	 */
+	@Override
 	public String getStyle(Object cell)
 	{
 		return (cell instanceof mxICell) ? ((mxICell) cell).getStyle() : null;
@@ -973,6 +996,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#setStyle(Object, String)
 	 */
+	@Override
 	public String setStyle(Object cell, String style)
 	{
 		if (style == null || !style.equals(getStyle(cell)))
@@ -998,6 +1022,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#isCollapsed(Object)
 	 */
+	@Override
 	public boolean isCollapsed(Object cell)
 	{
 		return (cell instanceof mxICell) ? ((mxICell) cell).isCollapsed()
@@ -1007,6 +1032,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#setCollapsed(Object, boolean)
 	 */
+	@Override
 	public boolean setCollapsed(Object cell, boolean collapsed)
 	{
 		if (collapsed != isCollapsed(cell))
@@ -1034,6 +1060,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#isVisible(Object)
 	 */
+	@Override
 	public boolean isVisible(Object cell)
 	{
 		return (cell instanceof mxICell) ? ((mxICell) cell).isVisible() : false;
@@ -1042,6 +1069,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#setVisible(Object, boolean)
 	 */
+	@Override
 	public boolean setVisible(Object cell, boolean visible)
 	{
 		if (visible != isVisible(cell))
@@ -1081,6 +1109,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#beginUpdate()
 	 */
+	@Override
 	public void beginUpdate()
 	{
 		updateLevel++;
@@ -1090,6 +1119,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 	/* (non-Javadoc)
 	 * @see com.mxgraph.model.mxIGraphModel#endUpdate()
 	 */
+	@Override
 	public void endUpdate()
 	{
 		updateLevel--;
@@ -1787,6 +1817,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 		/**
 		 * Changes the root of the model.
 		 */
+		@Override
 		public void execute()
 		{
 			root = previous;
@@ -1998,6 +2029,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 		/**
 		 * Changes the root of the model.
 		 */
+		@Override
 		public void execute()
 		{
 			Object tmp = model.getParent(child);
@@ -2125,6 +2157,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 		/**
 		 * Changes the root of the model.
 		 */
+		@Override
 		public void execute()
 		{
 			terminal = previous;
@@ -2212,6 +2245,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 		/**
 		 * Changes the root of the model.
 		 */
+		@Override
 		public void execute()
 		{
 			value = previous;
@@ -2304,6 +2338,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 		/**
 		 * Changes the root of the model.
 		 */
+		@Override
 		public void execute()
 		{
 			style = previous;
@@ -2397,6 +2432,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 		/**
 		 * Changes the root of the model.
 		 */
+		@Override
 		public void execute()
 		{
 			geometry = previous;
@@ -2490,6 +2526,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 		/**
 		 * Changes the root of the model.
 		 */
+		@Override
 		public void execute()
 		{
 			collapsed = previous;
@@ -2582,6 +2619,7 @@ public class mxGraphModel extends mxEventSource implements mxIGraphModel,
 		/**
 		 * Changes the root of the model.
 		 */
+		@Override
 		public void execute()
 		{
 			visible = previous;

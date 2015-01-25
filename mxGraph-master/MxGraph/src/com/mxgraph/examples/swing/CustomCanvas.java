@@ -4,6 +4,7 @@ import javax.swing.BorderFactory;
 import javax.swing.CellRendererPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 
 import com.mxgraph.canvas.mxICanvas;
@@ -32,6 +33,7 @@ public class CustomCanvas extends JFrame
 
 		mxGraph graph = new mxGraph()
 		{
+			@Override
 			public void drawState(mxICanvas canvas, mxCellState state,
 					boolean drawLabel)
 			{
@@ -83,6 +85,7 @@ public class CustomCanvas extends JFrame
 			 */
 			private static final long serialVersionUID = 4683716829748931448L;
 
+			@Override
 			public mxInteractiveCanvas createCanvas()
 			{
 				return new SwingCanvas(this);
@@ -109,7 +112,7 @@ public class CustomCanvas extends JFrame
 
 			vertexRenderer.setBorder(BorderFactory
 					.createBevelBorder(BevelBorder.RAISED));
-			vertexRenderer.setHorizontalAlignment(JLabel.CENTER);
+			vertexRenderer.setHorizontalAlignment(SwingConstants.CENTER);
 			vertexRenderer.setBackground(graphComponent.getBackground()
 					.darker());
 			vertexRenderer.setOpaque(true);

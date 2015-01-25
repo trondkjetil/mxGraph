@@ -223,6 +223,7 @@ public class mxGraphics2DCanvas extends mxBasicCanvas
 	 * (non-Javadoc)
 	 * @see com.mxgraph.canvas.mxICanvas#drawCell()
 	 */
+	@Override
 	public Object drawCell(mxCellState state)
 	{
 		Map<String, Object> style = state.getStyle();
@@ -249,6 +250,7 @@ public class mxGraphics2DCanvas extends mxBasicCanvas
 	 * (non-Javadoc)
 	 * @see com.mxgraph.canvas.mxICanvas#drawLabel()
 	 */
+	@Override
 	public Object drawLabel(String text, mxCellState state, boolean html)
 	{
 		Map<String, Object> style = state.getStyle();

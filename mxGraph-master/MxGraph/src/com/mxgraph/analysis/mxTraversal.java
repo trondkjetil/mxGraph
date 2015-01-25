@@ -190,8 +190,8 @@ public class mxTraversal
 		for (int i = 0; i < vertexCount; i++)
 		{
 			distances[i] = Integer.MAX_VALUE;
-			vertexList.add((Object) vertexes[i]);
-			vertexListStatic.add((Object) vertexes[i]);
+			vertexList.add(vertexes[i]);
+			vertexListStatic.add(vertexes[i]);
 		}
 
 		distances[vertexListStatic.indexOf(startVertex)] = 0;
@@ -413,7 +413,7 @@ public class mxTraversal
 
 		for (int i = 0; i < dist[0].length; i++)
 		{
-			if ((Double) dist[i][i] < 0)
+			if (dist[i][i] < 0)
 			{
 				throw new StructuralException("The graph has negative cycles");
 			}
@@ -533,9 +533,9 @@ public class mxTraversal
 	private static ArrayList<Object> getWFIPathRec(mxAnalysisGraph aGraph, Object[][] paths, Object startVertex, Object targetVertex,
 			ArrayList<Object> currPath, mxCostFunction cf, mxGraphView view) throws StructuralException
 	{
-		Double sourceIndexD = (Double) cf.getCost(view.getState(startVertex));
+		Double sourceIndexD = cf.getCost(view.getState(startVertex));
 		Object[] parents = paths[sourceIndexD.intValue()];
-		Double targetIndexD = (Double) cf.getCost(view.getState(targetVertex));
+		Double targetIndexD = cf.getCost(view.getState(targetVertex));
 		int tIndex = targetIndexD.intValue();
 
 		if (parents[tIndex] != null)

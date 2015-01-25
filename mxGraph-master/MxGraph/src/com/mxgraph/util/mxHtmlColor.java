@@ -142,7 +142,7 @@ public class mxHtmlColor
 			return (float) (parsePercent(val) * max / max);
 		}
 		
-		return (float) (Integer.parseInt(val) / max);
+		return Integer.parseInt(val) / max;
 	}
 
 	protected static double parsePercent(String perc)

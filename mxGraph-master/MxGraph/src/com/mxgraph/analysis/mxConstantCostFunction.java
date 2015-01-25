@@ -29,6 +29,7 @@ public class mxConstantCostFunction implements mxICostFunction
 	/**
 	 *
 	 */
+	@Override
 	public double getCost(mxCellState state)
 	{
 		return cost;

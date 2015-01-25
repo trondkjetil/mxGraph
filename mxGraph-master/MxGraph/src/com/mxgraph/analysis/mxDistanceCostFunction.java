@@ -17,6 +17,7 @@ public class mxDistanceCostFunction implements mxICostFunction
 	 * Returns the Euclidean length of the edge defined by the absolute
 	 * points in the given state or 0 if no points are defined.
 	 */
+	@Override
 	public double getCost(mxCellState state)
 	{
 		double cost = 0;

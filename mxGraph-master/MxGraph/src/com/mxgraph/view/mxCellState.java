@@ -517,6 +517,7 @@ public class mxCellState extends mxRectangle
 	 * except the view and cell references, which are copied with no
 	 * cloning to the new instance.
 	 */
+	@Override
 	public Object clone()
 	{
 		mxCellState clone = new mxCellState(view, cell, style);

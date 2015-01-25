@@ -118,6 +118,7 @@ public class mxPoint implements Serializable, Cloneable
 	 * 
 	 * Returns true if the given object equals this rectangle.
 	 */
+	@Override
 	public boolean equals(Object obj)
 	{
 		if (obj instanceof mxPoint)
@@ -133,6 +134,7 @@ public class mxPoint implements Serializable, Cloneable
 	/**
 	 * Returns a new instance of the same point.
 	 */
+	@Override
 	public Object clone()
 	{
 		mxPoint clone;
@@ -157,6 +159,7 @@ public class mxPoint implements Serializable, Cloneable
 	 * of this <code>mxPoint</code>.
 	 * @return a string representation of this <code>mxPoint</code>.
 	 */
+	@Override
 	public String toString()
 	{
 		return getClass().getName() + "[" + x + ", " + y + "]";

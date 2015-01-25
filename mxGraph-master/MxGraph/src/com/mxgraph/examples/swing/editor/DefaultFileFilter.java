@@ -53,6 +53,7 @@ public class DefaultFileFilter extends FileFilter
 	 *            The file to be checked.
 	 * @return Returns true if the file is accepted.
 	 */
+	@Override
 	public boolean accept(File file)
 	{
 		return file.isDirectory() || file.getName().toLowerCase().endsWith(ext);
@@ -63,6 +64,7 @@ public class DefaultFileFilter extends FileFilter
 	 * 
 	 * @return Returns the description.
 	 */
+	@Override
 	public String getDescription()
 	{
 		return desc;
@@ -127,6 +129,7 @@ public class DefaultFileFilter extends FileFilter
 		 *            The file to be checked.
 		 * @return Returns true if the file is accepted.
 		 */
+		@Override
 		public boolean accept(File file)
 		{
 			if (file.isDirectory())
@@ -152,6 +155,7 @@ public class DefaultFileFilter extends FileFilter
 		 * 
 		 * @return Returns the description.
 		 */
+		@Override
 		public String getDescription()
 		{
 			return desc;
@@ -190,6 +194,7 @@ public class DefaultFileFilter extends FileFilter
 		 * 
 		 * @return Returns true if the file is accepted.
 		 */
+		@Override
 		public boolean accept(File file)
 		{
 			if (file.isDirectory())
@@ -207,6 +212,7 @@ public class DefaultFileFilter extends FileFilter
 		 * 
 		 * @return Returns the description.
 		 */
+		@Override
 		public String getDescription()
 		{
 			return desc;

@@ -49,6 +49,7 @@ public class mxCellCodec extends mxObjectCodec
 	/**
 	 * Excludes user objects that are XML nodes.
 	 */
+	@Override
 	public boolean isExcluded(Object obj, String attr, Object value,
 			boolean write)
 	{
@@ -61,6 +62,7 @@ public class mxCellCodec extends mxObjectCodec
 	 * Encodes an mxCell and wraps the XML up inside the
 	 * XML of the user object (inversion).
 	 */
+	@Override
 	public Node afterEncode(mxCodec enc, Object obj, Node node)
 	{
 		if (obj instanceof mxCell)
@@ -95,6 +97,7 @@ public class mxCellCodec extends mxObjectCodec
 	 * Decodes an mxCell and uses the enclosing XML node as
 	 * the user object for the cell (inversion).
 	 */
+	@Override
 	public Node beforeDecode(mxCodec dec, Node node, Object obj)
 	{
 		Element inner = (Element) node;

@@ -32,6 +32,7 @@ public class EditorKeyboardHandler extends mxKeyboardHandler
 	/**
 	 * Return JTree's input map.
 	 */
+	@Override
 	protected InputMap getInputMap(int condition)
 	{
 		InputMap map = super.getInputMap(condition);
@@ -57,6 +58,7 @@ public class EditorKeyboardHandler extends mxKeyboardHandler
 	/**
 	 * Return the mapping between JTree's input map and JGraph's actions.
 	 */
+	@Override
 	protected ActionMap createActionMap()
 	{
 		ActionMap map = super.createActionMap();

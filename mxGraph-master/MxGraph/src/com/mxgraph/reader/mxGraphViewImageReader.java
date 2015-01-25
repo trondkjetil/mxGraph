@@ -190,6 +190,7 @@ public class mxGraphViewImageReader extends mxGraphViewReader
 	 * @see
 	 * com.mxgraph.reader.mxGraphViewReader#createCanvas(java.util.Hashtable)
 	 */
+	@Override
 	public mxICanvas createCanvas(Map<String, Object> attrs)
 	{
 		int width = 0;

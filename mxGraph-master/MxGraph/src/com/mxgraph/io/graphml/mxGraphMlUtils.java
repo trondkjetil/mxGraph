@@ -186,7 +186,7 @@ public class mxGraphMlUtils
 
 		for (int i = 0; i < length; i++)
 		{
-			copy.add((Node) nodeList.item(i));
+			copy.add(nodeList.item(i));
 		}
 		
 		return copy;

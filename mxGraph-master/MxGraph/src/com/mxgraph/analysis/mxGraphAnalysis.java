@@ -404,6 +404,7 @@ public class mxGraphAnalysis
 			/**
 			 * 
 			 */
+			@Override
 			public int compare(mxCellState o1, mxCellState o2)
 			{
 				Double d1 = new Double(cf.getCost(o1));

@@ -58,6 +58,7 @@ public class mxSwimlaneManager extends mxEventSource
 	 */
 	protected mxIEventListener addHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			if (isEnabled() && isAddEnabled())
@@ -72,6 +73,7 @@ public class mxSwimlaneManager extends mxEventSource
 	 */
 	protected mxIEventListener resizeHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			if (isEnabled() && isResizeEnabled())

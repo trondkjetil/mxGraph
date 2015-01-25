@@ -43,6 +43,7 @@ public class ClickHandler extends JFrame
 		graphComponent.getGraphControl().addMouseListener(new MouseAdapter()
 		{
 		
+			@Override
 			public void mouseReleased(MouseEvent e)
 			{
 				Object cell = graphComponent.getCellAt(e.getX(), e.getY());

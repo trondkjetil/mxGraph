@@ -12,6 +12,7 @@ public class mxLineShape extends mxBasicShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		if (configureGraphics(canvas, state, false))

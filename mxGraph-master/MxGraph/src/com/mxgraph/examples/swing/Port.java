@@ -32,6 +32,7 @@ public class Port extends JFrame
 			
 			// Ports are not used as terminals for edges, they are
 			// only used to compute the graphical connection point
+			@Override
 			public boolean isPort(Object cell){
 				mxGeometry geo = getCellGeometry(cell);
 				
@@ -40,6 +41,7 @@ public class Port extends JFrame
 			
 			// Implements a tooltip that shows the actual
 			// source and target of an edge
+			@Override
 			public String getToolTipForCell(Object cell)
 			{
 				if (model.isEdge(cell)){
@@ -52,6 +54,7 @@ public class Port extends JFrame
 			}
 			
 			// Removes the folding icon and disables any folding
+			@Override
 			public boolean isCellFoldable(Object cell, boolean collapse)
 			{
 				return false;

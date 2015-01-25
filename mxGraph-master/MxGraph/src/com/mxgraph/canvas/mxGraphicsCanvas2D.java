@@ -214,6 +214,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * Saves the current canvas state.
 	 */
+	@Override
 	public void save()
 	{
 		stack.push(state);
@@ -224,6 +225,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * Restores the last canvas state.
 	 */
+	@Override
 	public void restore()
 	{
 		state = stack.pop();
@@ -249,6 +251,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void scale(double value)
 	{
 		// This implementation uses custom scale/translate and built-in rotation
@@ -258,6 +261,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void translate(double dx, double dy)
 	{
 		// This implementation uses custom scale/translate and built-in rotation
@@ -268,6 +272,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void rotate(double theta, boolean flipH, boolean flipV, double cx, double cy)
 	{
 		cx += state.dx;
@@ -305,6 +310,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setStrokeWidth(double value)
 	{
 		// Lazy and cached instantiation strategy for all stroke properties
@@ -317,6 +323,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * Caches color conversion as it is expensive.
 	 */
+	@Override
 	public void setStrokeColor(String value)
 	{
 		// Lazy and cached instantiation strategy for all stroke properties
@@ -330,6 +337,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setDashed(boolean value)
 	{
 		// Lazy and cached instantiation strategy for all stroke properties
@@ -342,6 +350,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setDashPattern(String value)
 	{
 		if (value != null && value.length() > 0)
@@ -351,7 +360,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 
 			for (int i = 0; i < tokens.length; i++)
 			{
-				dashpattern[i] = (float) (Float.parseFloat(tokens[i]));
+				dashpattern[i] = (Float.parseFloat(tokens[i]));
 			}
 
 			state.dashPattern = dashpattern;
@@ -361,6 +370,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setLineCap(String value)
 	{
 		if (!state.lineCap.equals(value))
@@ -372,6 +382,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setLineJoin(String value)
 	{
 		if (!state.lineJoin.equals(value))
@@ -383,6 +394,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setMiterLimit(double value)
 	{
 		if (value != state.miterLimit)
@@ -394,6 +406,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setFontSize(double value)
 	{
 		if (value != state.fontSize)
@@ -405,6 +418,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setFontColor(String value)
 	{
 		if (state.fontColorValue == null || !state.fontColorValue.equals(value))
@@ -417,6 +431,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setFontBackgroundColor(String value)
 	{
 		if (state.fontBackgroundColorValue == null || !state.fontBackgroundColorValue.equals(value))
@@ -429,6 +444,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setFontBorderColor(String value)
 	{
 		if (state.fontBorderColorValue == null || !state.fontBorderColorValue.equals(value))
@@ -441,6 +457,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setFontFamily(String value)
 	{
 		if (!state.fontFamily.equals(value))
@@ -452,6 +469,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setFontStyle(int value)
 	{
 		if (value != state.fontStyle)
@@ -463,6 +481,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setAlpha(double value)
 	{
 		if (state.alpha != value)
@@ -475,6 +494,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setFillColor(String value)
 	{
 		if (state.fillColorValue == null || !state.fillColorValue.equals(value))
@@ -490,14 +510,15 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setGradient(String color1, String color2, double x, double y, double w, double h, String direction, double alpha1,
 			double alpha2)
 	{
 		// LATER: Add lazy instantiation and check if paint already created
 		float x1 = (float) ((state.dx + x) * state.scale);
 		float y1 = (float) ((state.dy + y) * state.scale);
-		float x2 = (float) x1;
-		float y2 = (float) y1;
+		float x2 = x1;
+		float y2 = y1;
 		h *= state.scale;
 		w *= state.scale;
 
@@ -557,6 +578,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 *
 	 */
+	@Override
 	public void rect(double x, double y, double w, double h)
 	{
 		currentPath = new GeneralPath();
@@ -567,6 +589,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * Implements a rounded rectangle using a path.
 	 */
+	@Override
 	public void roundrect(double x, double y, double w, double h, double dx, double dy)
 	{
 		// LATER: Use arc here or quad in VML/SVG for exact match
@@ -585,6 +608,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void ellipse(double x, double y, double w, double h)
 	{
 		currentPath = new GeneralPath();
@@ -595,6 +619,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void image(double x, double y, double w, double h, String src, boolean aspect, boolean flipH, boolean flipV)
 	{
 		if (src != null && w > 0 && h > 0)
@@ -976,6 +1001,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * Draws the given text.
 	 */
+	@Override
 	public void text(double x, double y, double w, double h, String str, String align, String valign, boolean wrap, String format,
 			String overflow, boolean clip, double rotation)
 	{
@@ -1021,7 +1047,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 				textWidth = Math.max(textWidth, stringWidths[i]);
 			}
 
-			int textHeight = (int) Math.round(lines.length * (fm.getFont().getSize() * mxConstants.LINE_HEIGHT));
+			int textHeight = Math.round(lines.length * (fm.getFont().getSize() * mxConstants.LINE_HEIGHT));
 			
 			if (clip && textHeight > h && h > 0)
 			{
@@ -1096,7 +1122,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 					}
 				}
 
-				y += (int) Math.round(fm.getFont().getSize() * mxConstants.LINE_HEIGHT);
+				y += Math.round(fm.getFont().getSize() * mxConstants.LINE_HEIGHT);
 			}
 		}
 	}
@@ -1138,6 +1164,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void begin()
 	{
 		currentPath = new GeneralPath();
@@ -1146,6 +1173,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void moveTo(double x, double y)
 	{
 		if (currentPath != null)
@@ -1157,6 +1185,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void lineTo(double x, double y)
 	{
 		if (currentPath != null)
@@ -1168,6 +1197,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void quadTo(double x1, double y1, double x2, double y2)
 	{
 		if (currentPath != null)
@@ -1180,6 +1210,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void curveTo(double x1, double y1, double x2, double y2, double x3, double y3)
 	{
 		if (currentPath != null)
@@ -1193,6 +1224,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * Closes the current path.
 	 */
+	@Override
 	public void close()
 	{
 		if (currentPath != null)
@@ -1204,6 +1236,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void stroke()
 	{
 		paintCurrentPath(false, true);
@@ -1212,6 +1245,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void fill()
 	{
 		paintCurrentPath(true, false);
@@ -1220,6 +1254,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void fillAndStroke()
 	{
 		paintCurrentPath(true, true);
@@ -1348,6 +1383,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setShadow(boolean value)
 	{
 		state.shadow = value;
@@ -1356,6 +1392,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setShadowColor(String value)
 	{
 		state.shadowColorValue = value;
@@ -1364,6 +1401,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setShadowAlpha(double value)
 	{
 		state.shadowAlpha = value;
@@ -1372,6 +1410,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 	/**
 	 * 
 	 */
+	@Override
 	public void setShadowOffset(double dx, double dy)
 	{
 		state.shadowOffsetX = dx;
@@ -1467,7 +1506,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 
 				for (int i = 0; i < dash.length; i++)
 				{
-					dash[i] = (float) (state.dashPattern[i] * sw);
+					dash[i] = state.dashPattern[i] * sw;
 				}
 			}
 
@@ -1671,6 +1710,7 @@ public class mxGraphicsCanvas2D implements mxICanvas2D
 		/**
 		 * 
 		 */
+		@Override
 		public Object clone() throws CloneNotSupportedException
 		{
 			return super.clone();

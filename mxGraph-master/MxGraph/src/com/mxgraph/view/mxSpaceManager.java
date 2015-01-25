@@ -45,6 +45,7 @@ public class mxSpaceManager extends mxEventSource
 	 */
 	protected mxIEventListener resizeHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			if (isEnabled())

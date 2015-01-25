@@ -13,6 +13,7 @@ public class mxDoubleRectangleShape extends mxRectangleShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		super.paintShape(canvas, state);

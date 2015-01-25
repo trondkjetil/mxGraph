@@ -14,6 +14,7 @@ public class mxArrowShape extends mxBasicShape
 	/**
 	 *
 	 */
+	@Override
 	public Shape createShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		double scale = canvas.getScale();

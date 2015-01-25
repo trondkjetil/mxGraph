@@ -232,6 +232,7 @@ public class mxCellMarker extends JComponent
 	/**
 	 * Sets the enabled state of the marker.
 	 */
+	@Override
 	public void setEnabled(boolean enabled)
 	{
 		this.enabled = enabled;
@@ -241,6 +242,7 @@ public class mxCellMarker extends JComponent
 	 * Returns true if the marker is enabled, that is, if it processes events
 	 * in process.
 	 */
+	@Override
 	public boolean isEnabled()
 	{
 		return enabled;
@@ -594,6 +596,7 @@ public class mxCellMarker extends JComponent
 	/**
 	 * Paints the outline of the markedState with the currentColor.
 	 */
+	@Override
 	public void paint(Graphics g)
 	{
 		if (markedState != null && currentColor != null)

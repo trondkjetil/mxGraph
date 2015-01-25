@@ -100,6 +100,7 @@ public class Validation extends JFrame
 		// if you are using an mxEditor instance)
 		graph.getModel().addListener(mxEvent.CHANGE, new mxIEventListener()
 		{
+			@Override
 			public void invoke(Object sender, mxEventObject evt)
 			{
 				graphComponent.validateGraph();

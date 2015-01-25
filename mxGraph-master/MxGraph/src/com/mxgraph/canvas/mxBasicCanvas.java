@@ -51,6 +51,7 @@ public abstract class mxBasicCanvas implements mxICanvas
 	/**
 	 * Sets the current translate.
 	 */
+	@Override
 	public void setTranslate(int dx, int dy)
 	{
 		translate = new Point(dx, dy);
@@ -59,6 +60,7 @@ public abstract class mxBasicCanvas implements mxICanvas
 	/**
 	 * Returns the current translate.
 	 */
+	@Override
 	public Point getTranslate()
 	{
 		return translate;
@@ -67,6 +69,7 @@ public abstract class mxBasicCanvas implements mxICanvas
 	/**
 	 * 
 	 */
+	@Override
 	public void setScale(double scale)
 	{
 		this.scale = scale;
@@ -75,6 +78,7 @@ public abstract class mxBasicCanvas implements mxICanvas
 	/**
 	 * 
 	 */
+	@Override
 	public double getScale()
 	{
 		return scale;

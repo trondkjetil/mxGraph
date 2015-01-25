@@ -155,6 +155,7 @@ public class mxGraphOutline extends JComponent
 	 */
 	protected mxIEventListener repaintHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			updateScaleAndTranslate();
@@ -195,6 +196,7 @@ public class mxGraphOutline extends JComponent
 	 */
 	protected ComponentListener componentHandler = new ComponentAdapter()
 	{
+		@Override
 		public void componentResized(ComponentEvent e)
 		{
 			if (updateScaleAndTranslate())
@@ -219,6 +221,7 @@ public class mxGraphOutline extends JComponent
 		/**
 		 * 
 		 */
+		@Override
 		public void adjustmentValueChanged(AdjustmentEvent e)
 		{
 			if (updateScaleAndTranslate())
@@ -321,6 +324,7 @@ public class mxGraphOutline extends JComponent
 	/**
 	 * 
 	 */
+	@Override
 	public void setVisible(boolean visible)
 	{
 		super.setVisible(visible);
@@ -553,6 +557,7 @@ public class mxGraphOutline extends JComponent
 	/**
 	 * 
 	 */
+	@Override
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
@@ -793,6 +798,7 @@ public class mxGraphOutline extends JComponent
 		 * (non-Javadoc)
 		 * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mousePressed(MouseEvent e)
 		{
 			zoomGesture = hitZoomHandle(e.getX(), e.getY());
@@ -809,6 +815,7 @@ public class mxGraphOutline extends JComponent
 		 * (non-Javadoc)
 		 * @see java.awt.event.MouseMotionListener#mouseDragged(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mouseDragged(MouseEvent e)
 		{
 			if (isEnabled() && start != null)
@@ -855,6 +862,7 @@ public class mxGraphOutline extends JComponent
 		 * (non-Javadoc)
 		 * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mouseReleased(MouseEvent e)
 		{
 			if (start != null)
@@ -925,6 +933,7 @@ public class mxGraphOutline extends JComponent
 		 * (non-Javadoc)
 		 * @see java.awt.event.MouseMotionListener#mouseMoved(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mouseMoved(MouseEvent e)
 		{
 			if (hitZoomHandle(e.getX(), e.getY()))
@@ -945,6 +954,7 @@ public class mxGraphOutline extends JComponent
 		 * (non-Javadoc)
 		 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mouseClicked(MouseEvent e)
 		{
 			// ignore
@@ -954,6 +964,7 @@ public class mxGraphOutline extends JComponent
 		 * (non-Javadoc)
 		 * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mouseEntered(MouseEvent e)
 		{
 			// ignore
@@ -963,6 +974,7 @@ public class mxGraphOutline extends JComponent
 		 * (non-Javadoc)
 		 * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mouseExited(MouseEvent e)
 		{
 			// ignore

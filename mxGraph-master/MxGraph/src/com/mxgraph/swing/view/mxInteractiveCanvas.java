@@ -61,6 +61,7 @@ public class mxInteractiveCanvas extends mxGraphics2DCanvas
 	/**
 	 * Overrides graphics call to use image observer.
 	 */
+	@Override
 	protected void drawImageImpl(Image image, int x, int y)
 	{
 		g.drawImage(image, x, y, imageObserver);
@@ -69,6 +70,7 @@ public class mxInteractiveCanvas extends mxGraphics2DCanvas
 	/**
 	 * Returns the size for the given image.
 	 */
+	@Override
 	protected Dimension getImageSize(Image image)
 	{
 		return new Dimension(image.getWidth(imageObserver),

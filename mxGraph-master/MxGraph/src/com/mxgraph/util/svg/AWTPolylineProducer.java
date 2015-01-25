@@ -63,6 +63,7 @@ public class AWTPolylineProducer implements PointsHandler, ShapeProducer
 	/**
 	 * Sets the winding rule used to construct the path.
 	 */
+	@Override
 	public void setWindingRule(int i)
 	{
 		windingRule = i;
@@ -71,6 +72,7 @@ public class AWTPolylineProducer implements PointsHandler, ShapeProducer
 	/**
 	 * Returns the current winding rule.
 	 */
+	@Override
 	public int getWindingRule()
 	{
 		return windingRule;
@@ -81,6 +83,7 @@ public class AWTPolylineProducer implements PointsHandler, ShapeProducer
 	 * @return the shape or null if this handler has not been used by
 	 *         a parser.
 	 */
+	@Override
 	public Shape getShape()
 	{
 		return path;
@@ -89,6 +92,7 @@ public class AWTPolylineProducer implements PointsHandler, ShapeProducer
 	/**
 	 * Implements {@link PointsHandler#startPoints()}.
 	 */
+	@Override
 	public void startPoints() throws ParseException
 	{
 		path = new GeneralPath(windingRule);
@@ -98,6 +102,7 @@ public class AWTPolylineProducer implements PointsHandler, ShapeProducer
 	/**
 	 * Implements {@link PointsHandler#point(float,float)}.
 	 */
+	@Override
 	public void point(float x, float y) throws ParseException
 	{
 		if (newPath)
@@ -114,6 +119,7 @@ public class AWTPolylineProducer implements PointsHandler, ShapeProducer
 	/**
 	 * Implements {@link PointsHandler#endPoints()}.
 	 */
+	@Override
 	public void endPoints() throws ParseException
 	{
 	}

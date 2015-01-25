@@ -54,6 +54,7 @@ public class EditorAboutFrame extends JDialog
 			/**
 			 * 
 			 */
+			@Override
 			public void paintComponent(Graphics g)
 			{
 				super.paintComponent(g);
@@ -135,6 +136,7 @@ public class EditorAboutFrame extends JDialog
 		JButton closeButton = new JButton("Close");
 		closeButton.addActionListener(new ActionListener()
 		{
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				setVisible(false);
@@ -154,12 +156,14 @@ public class EditorAboutFrame extends JDialog
 	 * Overrides {@link JDialog#createRootPane()} to return a root pane that
 	 * hides the window when the user presses the ESCAPE key.O
 	 */
+	@Override
 	protected JRootPane createRootPane()
 	{
 		KeyStroke stroke = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);
 		JRootPane rootPane = new JRootPane();
 		rootPane.registerKeyboardAction(new ActionListener()
 		{
+			@Override
 			public void actionPerformed(ActionEvent actionEvent)
 			{
 				setVisible(false);

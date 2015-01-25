@@ -49,7 +49,7 @@ public class mxResources
 	 */
 	public static void add(String basename)
 	{
-		bundles.addFirst(PropertyResourceBundle.getBundle(basename));
+		bundles.addFirst(ResourceBundle.getBundle(basename));
 	}
 	
 	/**
@@ -61,7 +61,7 @@ public class mxResources
 	 */
 	public static void add(String basename, Locale locale)
 	{
-		bundles.addFirst(PropertyResourceBundle.getBundle(basename, locale));
+		bundles.addFirst(ResourceBundle.getBundle(basename, locale));
 	}
 
 	/**

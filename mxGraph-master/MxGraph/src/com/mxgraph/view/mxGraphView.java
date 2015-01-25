@@ -12,7 +12,6 @@ import java.util.Map;
 
 import com.mxgraph.model.mxGeometry;
 import com.mxgraph.model.mxGraphModel;
-import com.mxgraph.model.mxICell;
 import com.mxgraph.model.mxIGraphModel;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.util.mxEvent;
@@ -1891,6 +1890,7 @@ public class mxGraphView extends mxEventSource
 		/**
 		 * Changes the current root of the view.
 		 */
+		@Override
 		public void execute()
 		{
 			Object tmp = view.getCurrentRoot();

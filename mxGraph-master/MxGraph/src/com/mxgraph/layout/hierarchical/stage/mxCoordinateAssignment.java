@@ -251,6 +251,7 @@ public class mxCoordinateAssignment implements mxHierarchicalLayoutStage
 	/**
 	 * A basic horizontal coordinate assignment algorithm
 	 */
+	@Override
 	public void execute(Object parent)
 	{
 		mxGraphHierarchyModel model = layout.getModel();
@@ -1475,11 +1476,11 @@ public class mxCoordinateAssignment implements mxHierarchicalLayoutStage
 									jettyPositions.put(connectedEdges[j], pos);
 								}
 
-								if (j < (float)connectedEdgeCount / 2.0f)
+								if (j < connectedEdgeCount / 2.0f)
 								{
 									currentYOffset += prefVertEdgeOff;
 								}
-								else if (j > (float)connectedEdgeCount / 2.0f)
+								else if (j > connectedEdgeCount / 2.0f)
 								{
 									currentYOffset -= prefVertEdgeOff;
 								}
@@ -1797,6 +1798,7 @@ public class mxCoordinateAssignment implements mxHierarchicalLayoutStage
 		 * @return the standard return you would expect when comparing two
 		 *         double
 		 */
+		@Override
 		public int compareTo(Object arg0)
 		{
 			if (arg0 instanceof WeightedCellSorter)

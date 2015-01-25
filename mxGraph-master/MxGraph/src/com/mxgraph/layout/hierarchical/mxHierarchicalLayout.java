@@ -154,6 +154,7 @@ JGraphLayout.Stoppable*/
 	 * 
 	 * @param parent Parent cell that contains the children to be laid out.
 	 */
+	@Override
 	public void execute(Object parent)
 	{
 		execute(parent, null);
@@ -180,12 +181,14 @@ JGraphLayout.Stoppable*/
 		if (roots == null && parent == null)
 		{
 			// TODO indicate the problem
+			//Mod: 
 			return;
 		}
 
 		if (roots != null && parent != null)
 		{
 			for (Object root : roots)
+			
 			{
 				if (!model.isAncestor(parent, root))
 				{
@@ -730,6 +733,7 @@ JGraphLayout.Stoppable*/
 	/**
 	 * Returns <code>Hierarchical</code>, the name of this algorithm.
 	 */
+	@Override
 	public String toString()
 	{
 		return "Hierarchical";

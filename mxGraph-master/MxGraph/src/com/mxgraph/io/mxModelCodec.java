@@ -50,6 +50,7 @@ public class mxModelCodec extends mxObjectCodec
 	 * of cell nodes as produced by the mxCellCodec. The sequence is
 	 * wrapped-up in a node with the name root.
 	 */
+	@Override
 	protected void encodeObject(mxCodec enc, Object obj, Node node)
 	{
 		if (obj instanceof mxGraphModel)
@@ -65,6 +66,7 @@ public class mxModelCodec extends mxObjectCodec
 	 * Reads the cells into the graph model. All cells are children of the root
 	 * element in the node.
 	 */
+	@Override
 	public Node beforeDecode(mxCodec dec, Node node, Object into)
 	{
 		if (node instanceof Element)

@@ -36,7 +36,7 @@ public class Stencils extends JFrame
 					"/com/mxgraph/examples/swing/shapes.xml").getPath();
 			Document doc = mxXmlUtils.parseXml(mxUtils.readFile(filename));
 
-			Element shapes = (Element) doc.getDocumentElement();
+			Element shapes = doc.getDocumentElement();
 			NodeList list = shapes.getElementsByTagName("shape");
 
 			for (int i = 0; i < list.getLength(); i++)
@@ -45,12 +45,14 @@ public class Stencils extends JFrame
 				mxStencilRegistry.addStencil(shape.getAttribute("name"),
 						new mxStencil(shape)
 						{
+							@Override
 							protected mxGraphicsCanvas2D createCanvas(
 									final mxGraphics2DCanvas gc)
 							{
 								// Redirects image loading to graphics canvas
 								return new mxGraphicsCanvas2D(gc.getGraphics())
 								{
+									@Override
 									protected Image loadImage(String src)
 									{
 										// Adds image base path to relative image URLs
@@ -91,6 +93,7 @@ public class Stencils extends JFrame
 			mxGraphComponent graphComponent = new mxGraphComponent(graph)
 			{
 				// Sets global image base path
+				@Override
 				public mxInteractiveCanvas createCanvas()
 				{
 					mxInteractiveCanvas canvas = super.createCanvas();

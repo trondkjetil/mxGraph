@@ -131,6 +131,7 @@ public class mxCellRenderer
 		mxImageCanvas canvas = (mxImageCanvas) drawCells(graph, cells, scale,
 				clip, new CanvasFactory()
 				{
+					@Override
 					public mxICanvas createCanvas(int width, int height)
 					{
 						return new mxImageCanvas(graphicsCanvas, width, height,
@@ -151,6 +152,7 @@ public class mxCellRenderer
 		mxHtmlCanvas canvas = (mxHtmlCanvas) drawCells(graph, cells, scale,
 				clip, new CanvasFactory()
 				{
+					@Override
 					public mxICanvas createCanvas(int width, int height)
 					{
 						return new mxHtmlCanvas(mxDomUtils.createHtmlDocument());
@@ -170,6 +172,7 @@ public class mxCellRenderer
 		mxSvgCanvas canvas = (mxSvgCanvas) drawCells(graph, cells, scale, clip,
 				new CanvasFactory()
 				{
+					@Override
 					public mxICanvas createCanvas(int width, int height)
 					{
 						return new mxSvgCanvas(mxDomUtils.createSvgDocument(width,
@@ -190,6 +193,7 @@ public class mxCellRenderer
 		mxVmlCanvas canvas = (mxVmlCanvas) drawCells(graph, cells, scale, clip,
 				new CanvasFactory()
 				{
+					@Override
 					public mxICanvas createCanvas(int width, int height)
 					{
 						return new mxVmlCanvas(mxDomUtils.createVmlDocument());

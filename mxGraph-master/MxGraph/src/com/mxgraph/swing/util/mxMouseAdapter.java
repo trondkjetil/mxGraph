@@ -22,6 +22,7 @@ public class mxMouseAdapter implements MouseMotionListener, MouseListener
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		// empty
@@ -30,6 +31,7 @@ public class mxMouseAdapter implements MouseMotionListener, MouseListener
 	/**
 	 * 
 	 */
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
 		// empty
@@ -38,6 +40,7 @@ public class mxMouseAdapter implements MouseMotionListener, MouseListener
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		// empty
@@ -46,6 +49,7 @@ public class mxMouseAdapter implements MouseMotionListener, MouseListener
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseMoved(MouseEvent e)
 	{
 		// empty
@@ -54,6 +58,7 @@ public class mxMouseAdapter implements MouseMotionListener, MouseListener
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseClicked(MouseEvent e)
 	{
 		// empty
@@ -62,6 +67,7 @@ public class mxMouseAdapter implements MouseMotionListener, MouseListener
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseEntered(MouseEvent e)
 	{
 		// empty
@@ -70,6 +76,7 @@ public class mxMouseAdapter implements MouseMotionListener, MouseListener
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseExited(MouseEvent e)
 	{
 		// empty

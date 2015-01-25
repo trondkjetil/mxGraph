@@ -19,6 +19,7 @@ public class mxRectangleShape extends mxBasicShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		Map<String, Object> style = state.getStyle();

@@ -21,12 +21,13 @@ public class mxGeneratorRandomFunction extends mxGeneratorFunction
 		setRoundToDecimals(roundToDecimals);
 	};
 
+	@Override
 	public double getCost(mxCellState state)
 	{
 		Double edgeWeight = null;
 
 		edgeWeight = Math.random() * (maxWeight - minWeight) + minWeight;
-		edgeWeight = (double) Math.round(edgeWeight * Math.pow(10, getRoundToDecimals())) / Math.pow(10, getRoundToDecimals());
+		edgeWeight = Math.round(edgeWeight * Math.pow(10, getRoundToDecimals())) / Math.pow(10, getRoundToDecimals());
 
 		return edgeWeight;
 	};

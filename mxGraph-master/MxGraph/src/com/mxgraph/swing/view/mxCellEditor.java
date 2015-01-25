@@ -170,6 +170,7 @@ public class mxCellEditor implements mxICellEditor
 	 */
 	protected AbstractAction cancelEditingAction = new AbstractAction()
 	{
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			stopEditing(true);
@@ -181,6 +182,7 @@ public class mxCellEditor implements mxICellEditor
 	 */
 	protected AbstractAction textSubmitAction = new AbstractAction()
 	{
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			stopEditing(false);
@@ -406,6 +408,7 @@ public class mxCellEditor implements mxICellEditor
 	 * (non-Javadoc)
 	 * @see com.mxgraph.swing.view.mxICellEditor#startEditing(java.lang.Object, java.util.EventObject)
 	 */
+	@Override
 	public void startEditing(Object cell, EventObject evt)
 	{
 		if (editingCell != null)
@@ -489,6 +492,7 @@ public class mxCellEditor implements mxICellEditor
 	 * (non-Javadoc)
 	 * @see com.mxgraph.swing.view.mxICellEditor#stopEditing(boolean)
 	 */
+	@Override
 	public void stopEditing(boolean cancel)
 	{
 		if (editingCell != null)
@@ -557,6 +561,7 @@ public class mxCellEditor implements mxICellEditor
 	 * (non-Javadoc)
 	 * @see com.mxgraph.swing.view.mxICellEditor#getEditingCell()
 	 */
+	@Override
 	public Object getEditingCell()
 	{
 		return editingCell;
@@ -615,6 +620,7 @@ public class mxCellEditor implements mxICellEditor
 	 */
 	class NoLinefeedHtmlEditorKit extends HTMLEditorKit
 	{
+		@Override
 		public void write(Writer out, Document doc, int pos, int len)
 				throws IOException, BadLocationException
 		{
@@ -655,6 +661,7 @@ public class mxCellEditor implements mxICellEditor
 			super(buf, doc, pos, len);
 		}
 
+		@Override
 		protected void setLineLength(int l)
 		{
 			super.setLineLength(l);

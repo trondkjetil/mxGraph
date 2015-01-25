@@ -163,6 +163,7 @@ public class mxGraphTransferHandler extends TransferHandler
 	/**
 	 * 
 	 */
+	@Override
 	public boolean canImport(JComponent comp, DataFlavor[] flavors)
 	{
 		for (int i = 0; i < flavors.length; i++)
@@ -182,6 +183,7 @@ public class mxGraphTransferHandler extends TransferHandler
 	 * 
 	 * @see javax.swing.TransferHandler#createTransferable(javax.swing.JComponent)
 	 */
+	@Override
 	public Transferable createTransferable(JComponent c)
 	{
 		if (c instanceof mxGraphComponent)
@@ -264,6 +266,7 @@ public class mxGraphTransferHandler extends TransferHandler
 	/**
 	 * 
 	 */
+	@Override
 	public void exportDone(JComponent c, Transferable data, int action)
 	{
 		initialImportCount = 1;
@@ -298,6 +301,7 @@ public class mxGraphTransferHandler extends TransferHandler
 	/**
 	 * 
 	 */
+	@Override
 	public int getSourceActions(JComponent c)
 	{
 		return COPY_OR_MOVE;
@@ -307,6 +311,7 @@ public class mxGraphTransferHandler extends TransferHandler
 	 * Checks if the mxGraphTransferable data flavour is supported and calls
 	 * importGraphTransferable if possible.
 	 */
+	@Override
 	public boolean importData(JComponent c, Transferable t)
 	{
 		boolean result = false;

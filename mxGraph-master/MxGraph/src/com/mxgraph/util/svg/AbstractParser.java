@@ -71,6 +71,7 @@ public abstract class AbstractParser implements Parser
 	 * handler immediately.</p>
 	 * @param handler The error handler.
 	 */
+	@Override
 	public void setErrorHandler(ErrorHandler handler)
 	{
 		errorHandler = handler;
@@ -79,6 +80,7 @@ public abstract class AbstractParser implements Parser
 	/**
 	 * Parses the given string.
 	 */
+	@Override
 	public void parse(String s) throws ParseException
 	{
 		try

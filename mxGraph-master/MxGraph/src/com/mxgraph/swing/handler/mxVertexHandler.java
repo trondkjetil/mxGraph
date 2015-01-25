@@ -66,6 +66,7 @@ public class mxVertexHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	protected Rectangle[] createHandles()
 	{
 		Rectangle[] h = null;
@@ -113,6 +114,7 @@ public class mxVertexHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	protected JComponent createPreview()
 	{
 		JPanel preview = new JPanel();
@@ -126,6 +128,7 @@ public class mxVertexHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		if (!e.isConsumed() && first != null)
@@ -193,6 +196,7 @@ public class mxVertexHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		if (!e.isConsumed() && first != null)
@@ -324,6 +328,7 @@ public class mxVertexHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	protected Cursor getCursor(MouseEvent e, int index)
 	{
 		if (index >= 0 && index <= CURSORS.length)
@@ -390,6 +395,7 @@ public class mxVertexHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public Color getSelectionColor()
 	{
 		return mxSwingConstants.VERTEX_SELECTION_COLOR;
@@ -398,6 +404,7 @@ public class mxVertexHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public Stroke getSelectionStroke()
 	{
 		return mxSwingConstants.VERTEX_SELECTION_STROKE;
@@ -406,6 +413,7 @@ public class mxVertexHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public void paint(Graphics g)
 	{
 		Rectangle bounds = getState().getRectangle();

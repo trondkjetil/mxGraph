@@ -151,6 +151,7 @@ public class mxCurveLabelShape implements mxITextShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, String text,
 			mxCellState state, Map<String, Object> style)
 	{

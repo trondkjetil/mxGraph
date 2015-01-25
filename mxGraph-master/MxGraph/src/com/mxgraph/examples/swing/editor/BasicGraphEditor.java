@@ -29,6 +29,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
@@ -135,6 +137,7 @@ public class BasicGraphEditor extends JPanel
 	 */
 	protected mxIEventListener undoHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			undoManager.undoableEditHappened((mxUndoableEdit) evt
@@ -147,6 +150,7 @@ public class BasicGraphEditor extends JPanel
 	 */
 	protected mxIEventListener changeTracker = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			setModified(true);
@@ -179,6 +183,7 @@ public class BasicGraphEditor extends JPanel
 		// Keeps the selection in sync with the command history
 		mxIEventListener undoHandler = new mxIEventListener()
 		{
+			@Override
 			public void invoke(Object source, mxEventObject evt)
 			{
 				List<mxUndoableChange> changes = ((mxUndoableEdit) evt
@@ -256,7 +261,7 @@ public class BasicGraphEditor extends JPanel
 	 */
 	protected void installToolBar()
 	{
-		add(new EditorToolBar(this, JToolBar.HORIZONTAL), BorderLayout.NORTH);
+		add(new EditorToolBar(this, SwingConstants.HORIZONTAL), BorderLayout.NORTH);
 	}
 
 	/**
@@ -278,6 +283,7 @@ public class BasicGraphEditor extends JPanel
 		graphComponent.getGraph().addListener(mxEvent.REPAINT,
 				new mxIEventListener()
 				{
+					@Override
 					public void invoke(Object source, mxEventObject evt)
 					{
 						String buffer = (graphComponent.getTripleBuffer() != null) ? ""
@@ -308,9 +314,9 @@ public class BasicGraphEditor extends JPanel
 		final EditorPalette palette = new EditorPalette();
 		final JScrollPane scrollPane = new JScrollPane(palette);
 		scrollPane
-				.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+				.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane
-				.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+				.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		libraryPane.add(title, scrollPane);
 
 		// Updates the widths of the palettes if the container size changes
@@ -319,6 +325,7 @@ public class BasicGraphEditor extends JPanel
 			/**
 			 * 
 			 */
+			@Override
 			public void componentResized(ComponentEvent e)
 			{
 				int w = scrollPane.getWidth()
@@ -366,6 +373,7 @@ public class BasicGraphEditor extends JPanel
 			/**
 			 * 
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				graphOutline.setFitPage(!graphOutline.isFitPage());
@@ -382,6 +390,7 @@ public class BasicGraphEditor extends JPanel
 			/**
 			 * 
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				graphOutline.setDrawLabels(!graphOutline.isDrawLabels());
@@ -398,6 +407,7 @@ public class BasicGraphEditor extends JPanel
 			/**
 			 * 
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				graphOutline.setTripleBuffered(!graphOutline.isTripleBuffered());
@@ -446,6 +456,7 @@ public class BasicGraphEditor extends JPanel
 			/**
 			 * 
 			 */
+			@Override
 			public void mouseWheelMoved(MouseWheelEvent e)
 			{
 				if (e.getSource() instanceof mxGraphOutline
@@ -468,6 +479,7 @@ public class BasicGraphEditor extends JPanel
 			/**
 			 * 
 			 */
+			@Override
 			public void mousePressed(MouseEvent e)
 			{
 				// Handles context menu on the Mac where the trigger is on mousepressed
@@ -477,6 +489,7 @@ public class BasicGraphEditor extends JPanel
 			/**
 			 * 
 			 */
+			@Override
 			public void mouseReleased(MouseEvent e)
 			{
 				if (e.isPopupTrigger())
@@ -494,6 +507,7 @@ public class BasicGraphEditor extends JPanel
 			/**
 			 * 
 			 */
+			@Override
 			public void mousePressed(MouseEvent e)
 			{
 				// Handles context menu on the Mac where the trigger is on mousepressed
@@ -503,6 +517,7 @@ public class BasicGraphEditor extends JPanel
 			/**
 			 * 
 			 */
+			@Override
 			public void mouseReleased(MouseEvent e)
 			{
 				if (e.isPopupTrigger())
@@ -522,6 +537,7 @@ public class BasicGraphEditor extends JPanel
 					 * (non-Javadoc)
 					 * @see java.awt.event.MouseMotionListener#mouseDragged(java.awt.event.MouseEvent)
 					 */
+					@Override
 					public void mouseDragged(MouseEvent e)
 					{
 						mouseLocationChanged(e);
@@ -531,6 +547,7 @@ public class BasicGraphEditor extends JPanel
 					 * (non-Javadoc)
 					 * @see java.awt.event.MouseMotionListener#mouseMoved(java.awt.event.MouseEvent)
 					 */
+					@Override
 					public void mouseMoved(MouseEvent e)
 					{
 						mouseDragged(e);
@@ -644,6 +661,7 @@ public class BasicGraphEditor extends JPanel
 		AbstractAction newAction = new AbstractAction(name, (iconUrl != null) ? new ImageIcon(
 				BasicGraphEditor.class.getResource(iconUrl)) : null)
 		{
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				action.actionPerformed(new ActionEvent(getGraphComponent(), e
@@ -779,6 +797,7 @@ public class BasicGraphEditor extends JPanel
 		{
 			return new AbstractAction(mxResources.get(key))
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					final mxGraph graph = graphComponent.getGraph();
@@ -806,6 +825,7 @@ public class BasicGraphEditor extends JPanel
 						morph.addListener(mxEvent.DONE, new mxIEventListener()
 						{
 
+							@Override
 							public void invoke(Object sender, mxEventObject evt)
 							{
 								graph.getModel().endUpdate();
@@ -825,6 +845,7 @@ public class BasicGraphEditor extends JPanel
 			return new AbstractAction(mxResources.get(key))
 			{
 
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					JOptionPane.showMessageDialog(graphComponent,
@@ -852,7 +873,7 @@ public class BasicGraphEditor extends JPanel
 			}
 			else if (ident.equals("horizontalHierarchical"))
 			{
-				layout = new mxHierarchicalLayout(graph, JLabel.WEST);
+				layout = new mxHierarchicalLayout(graph, SwingConstants.WEST);
 			}
 			else if (ident.equals("verticalTree"))
 			{
@@ -882,6 +903,7 @@ public class BasicGraphEditor extends JPanel
 					 * Overrides the empty implementation to return the size of the
 					 * graph control.
 					 */
+					@Override
 					public mxRectangle getContainerSize()
 					{
 						return graphComponent.getLayoutAreaSize();
@@ -896,6 +918,7 @@ public class BasicGraphEditor extends JPanel
 					 * Overrides the empty implementation to return the size of the
 					 * graph control.
 					 */
+					@Override
 					public mxRectangle getContainerSize()
 					{
 						return graphComponent.getLayoutAreaSize();
@@ -910,6 +933,7 @@ public class BasicGraphEditor extends JPanel
 					 * Overrides the empty implementation to return the size of the
 					 * graph control.
 					 */
+					@Override
 					public mxRectangle getContainerSize()
 					{
 						return graphComponent.getLayoutAreaSize();
@@ -924,6 +948,7 @@ public class BasicGraphEditor extends JPanel
 					 * Overrides the empty implementation to return the size of the
 					 * graph control.
 					 */
+					@Override
 					public mxRectangle getContainerSize()
 					{
 						return graphComponent.getLayoutAreaSize();

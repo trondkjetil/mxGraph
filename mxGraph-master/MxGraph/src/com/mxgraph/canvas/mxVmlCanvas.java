@@ -86,6 +86,7 @@ public class mxVmlCanvas extends mxBasicCanvas
 	/* (non-Javadoc)
 	 * @see com.mxgraph.canvas.mxICanvas#drawCell()
 	 */
+	@Override
 	public Object drawCell(mxCellState state)
 	{
 		Map<String, Object> style = state.getStyle();
@@ -221,6 +222,7 @@ public class mxVmlCanvas extends mxBasicCanvas
 	 * (non-Javadoc)
 	 * @see com.mxgraph.canvas.mxICanvas#drawLabel()
 	 */
+	@Override
 	public Object drawLabel(String label, mxCellState state, boolean html)
 	{
 		mxRectangle bounds = state.getLabelBounds();

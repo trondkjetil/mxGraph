@@ -151,6 +151,7 @@ public abstract class mxPngEncodeParam
 		/**
 		 * Suppresses the 'bKGD' chunk from being output.
 		 */
+		@Override
 		public void unsetBackground()
 		{
 			backgroundSet = false;
@@ -159,6 +160,7 @@ public abstract class mxPngEncodeParam
 		/**
 		 * Returns true if a 'bKGD' chunk will be output.
 		 */
+		@Override
 		public boolean isBackgroundSet()
 		{
 			return backgroundSet;
@@ -169,6 +171,7 @@ public abstract class mxPngEncodeParam
 		 * depth must be one of 1, 2, 4, or 8, or else an
 		 * <code>IllegalArgumentException</code> will be thrown.
 		 */
+		@Override
 		public void setBitDepth(int bitDepth)
 		{
 			if (bitDepth != 1 && bitDepth != 2 && bitDepth != 4
@@ -342,6 +345,7 @@ public abstract class mxPngEncodeParam
 		/**
 		 * Suppresses the 'bKGD' chunk from being output.
 		 */
+		@Override
 		public void unsetBackground()
 		{
 			backgroundSet = false;
@@ -350,6 +354,7 @@ public abstract class mxPngEncodeParam
 		/**
 		 * Returns true if a 'bKGD' chunk will be output.
 		 */
+		@Override
 		public boolean isBackgroundSet()
 		{
 			return backgroundSet;
@@ -365,6 +370,7 @@ public abstract class mxPngEncodeParam
 		 * When encoding a source image of a smaller bit depth, pixel
 		 * values will be shifted and left-filled with zeroes.
 		 */
+		@Override
 		public void setBitDepth(int bitDepth)
 		{
 			if (bitDepth != 1 && bitDepth != 2 && bitDepth != 4
@@ -527,6 +533,7 @@ public abstract class mxPngEncodeParam
 		/**
 		 * Suppresses the 'bKGD' chunk from being output.
 		 */
+		@Override
 		public void unsetBackground()
 		{
 			backgroundSet = false;
@@ -535,6 +542,7 @@ public abstract class mxPngEncodeParam
 		/**
 		 * Returns true if a 'bKGD' chunk will be output.
 		 */
+		@Override
 		public boolean isBackgroundSet()
 		{
 			return backgroundSet;
@@ -544,6 +552,7 @@ public abstract class mxPngEncodeParam
 		 * Sets the desired bit depth for an RGB image.  The bit
 		 * depth must be 8 or 16.
 		 */
+		@Override
 		public void setBitDepth(int bitDepth)
 		{
 			if (bitDepth != 8 && bitDepth != 16)

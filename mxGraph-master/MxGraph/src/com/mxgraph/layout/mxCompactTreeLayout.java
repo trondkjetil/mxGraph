@@ -132,6 +132,7 @@ public class mxCompactTreeLayout extends mxGraphLayout
 	 * @param vertex Object that represents the vertex to be tested.
 	 * @return Returns true if the vertex should be ignored.
 	 */
+	@Override
 	public boolean isVertexIgnored(Object vertex)
 	{
 		return super.isVertexIgnored(vertex)
@@ -274,6 +275,7 @@ public class mxCompactTreeLayout extends mxGraphLayout
 	 * (non-Javadoc)
 	 * @see com.mxgraph.layout.mxIGraphLayout#execute(java.lang.Object)
 	 */
+	@Override
 	public void execute(Object parent)
 	{
 		super.execute(parent);
@@ -1051,11 +1053,11 @@ public class mxCompactTreeLayout extends mxGraphLayout
 				}
 			}
 
-			if (j < (float) childCount / 2.0f)
+			if (j < childCount / 2.0f)
 			{
 				currentYOffset += prefVertEdgeOff;
 			}
-			else if (j > (float) childCount / 2.0f)
+			else if (j > childCount / 2.0f)
 			{
 				currentYOffset -= prefVertEdgeOff;
 			}
@@ -1117,6 +1119,7 @@ public class mxCompactTreeLayout extends mxGraphLayout
 		 * @return the standard return you would expect when comparing two
 		 *         double
 		 */
+		@Override
 		public int compareTo(Object arg0)
 		{
 			if (arg0 instanceof WeightedCellSorter)

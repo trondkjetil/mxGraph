@@ -68,6 +68,7 @@ public class mxMedianHybridCrossingReduction implements
 	 * Performs a vertex ordering within ranks as described by Gansner et al
 	 * 1993
 	 */
+	@Override
 	public void execute(Object parent)
 	{
 		mxGraphHierarchyModel model = layout.getModel();
@@ -635,6 +636,7 @@ public class mxMedianHybridCrossingReduction implements
 		 * @return the standard return you would expect when comparing two
 		 *         double
 		 */
+		@Override
 		public int compareTo(Object arg0)
 		{
 			if (arg0 instanceof MedianCellSorter)

@@ -5,10 +5,7 @@ import java.util.Map;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-import org.xml.sax.Attributes;
-
 import com.mxgraph.canvas.mxICanvas2D;
-import com.mxgraph.reader.mxSaxOutputHandler.IElementHandler;
 
 /**
  *
@@ -102,6 +99,7 @@ public class mxDomOutputParser
 	{
 		handlers.put("save", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.save();
@@ -110,6 +108,7 @@ public class mxDomOutputParser
 
 		handlers.put("restore", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.restore();
@@ -118,6 +117,7 @@ public class mxDomOutputParser
 
 		handlers.put("scale", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.scale(Double.parseDouble(elt.getAttribute("scale")));
@@ -126,6 +126,7 @@ public class mxDomOutputParser
 
 		handlers.put("translate", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.translate(Double.parseDouble(elt.getAttribute("dx")),
@@ -135,6 +136,7 @@ public class mxDomOutputParser
 
 		handlers.put("rotate", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.rotate(Double.parseDouble(elt.getAttribute("theta")),
@@ -147,6 +149,7 @@ public class mxDomOutputParser
 
 		handlers.put("strokewidth", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setStrokeWidth(Double.parseDouble(elt
@@ -156,6 +159,7 @@ public class mxDomOutputParser
 
 		handlers.put("strokecolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setStrokeColor(elt.getAttribute("color"));
@@ -164,6 +168,7 @@ public class mxDomOutputParser
 
 		handlers.put("dashed", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setDashed(elt.getAttribute("dashed").equals("1"));
@@ -172,6 +177,7 @@ public class mxDomOutputParser
 
 		handlers.put("dashpattern", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setDashPattern(elt.getAttribute("pattern"));
@@ -180,6 +186,7 @@ public class mxDomOutputParser
 
 		handlers.put("linecap", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setLineCap(elt.getAttribute("cap"));
@@ -188,6 +195,7 @@ public class mxDomOutputParser
 
 		handlers.put("linejoin", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setLineJoin(elt.getAttribute("join"));
@@ -196,6 +204,7 @@ public class mxDomOutputParser
 
 		handlers.put("miterlimit", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setMiterLimit(Double.parseDouble(elt
@@ -205,6 +214,7 @@ public class mxDomOutputParser
 
 		handlers.put("fontsize", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setFontSize(Double.parseDouble(elt.getAttribute("size")));
@@ -213,6 +223,7 @@ public class mxDomOutputParser
 
 		handlers.put("fontcolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setFontColor(elt.getAttribute("color"));
@@ -221,6 +232,7 @@ public class mxDomOutputParser
 
 		handlers.put("fontbackgroundcolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setFontBackgroundColor(elt.getAttribute("color"));
@@ -229,6 +241,7 @@ public class mxDomOutputParser
 
 		handlers.put("fontbordercolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setFontBorderColor(elt.getAttribute("color"));
@@ -237,6 +250,7 @@ public class mxDomOutputParser
 
 		handlers.put("fontfamily", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setFontFamily(elt.getAttribute("family"));
@@ -245,6 +259,7 @@ public class mxDomOutputParser
 
 		handlers.put("fontstyle", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setFontStyle(Integer.parseInt(elt.getAttribute("style")));
@@ -253,6 +268,7 @@ public class mxDomOutputParser
 
 		handlers.put("alpha", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setAlpha(Double.parseDouble(elt.getAttribute("alpha")));
@@ -261,6 +277,7 @@ public class mxDomOutputParser
 
 		handlers.put("fillcolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setFillColor(elt.getAttribute("color"));
@@ -269,6 +286,7 @@ public class mxDomOutputParser
 		
 		handlers.put("shadowcolor", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setShadowColor(elt.getAttribute("color"));
@@ -277,6 +295,7 @@ public class mxDomOutputParser
 		
 		handlers.put("shadowalpha", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setShadowAlpha(Double.parseDouble(elt.getAttribute("alpha")));
@@ -285,6 +304,7 @@ public class mxDomOutputParser
 		
 		handlers.put("shadowoffset", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setShadowOffset(Double.parseDouble(elt.getAttribute("dx")),
@@ -294,6 +314,7 @@ public class mxDomOutputParser
 
 		handlers.put("shadow", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setShadow(elt.getAttribute("enabled").equals("1"));
@@ -302,6 +323,7 @@ public class mxDomOutputParser
 		
 		handlers.put("gradient", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.setGradient(elt.getAttribute("c1"),
@@ -318,6 +340,7 @@ public class mxDomOutputParser
 
 		handlers.put("rect", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.rect(Double.parseDouble(elt.getAttribute("x")),
@@ -329,6 +352,7 @@ public class mxDomOutputParser
 
 		handlers.put("roundrect", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.roundrect(Double.parseDouble(elt.getAttribute("x")),
@@ -342,6 +366,7 @@ public class mxDomOutputParser
 
 		handlers.put("ellipse", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.ellipse(Double.parseDouble(elt.getAttribute("x")),
@@ -353,6 +378,7 @@ public class mxDomOutputParser
 
 		handlers.put("image", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.image(Double.parseDouble(elt.getAttribute("x")), Double
@@ -367,6 +393,7 @@ public class mxDomOutputParser
 
 		handlers.put("text", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.text(Double.parseDouble(elt.getAttribute("x")),
@@ -386,6 +413,7 @@ public class mxDomOutputParser
 
 		handlers.put("begin", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.begin();
@@ -394,6 +422,7 @@ public class mxDomOutputParser
 
 		handlers.put("move", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.moveTo(Double.parseDouble(elt.getAttribute("x")),
@@ -403,6 +432,7 @@ public class mxDomOutputParser
 
 		handlers.put("line", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.lineTo(Double.parseDouble(elt.getAttribute("x")),
@@ -412,6 +442,7 @@ public class mxDomOutputParser
 
 		handlers.put("quad", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.quadTo(Double.parseDouble(elt.getAttribute("x1")),
@@ -423,6 +454,7 @@ public class mxDomOutputParser
 
 		handlers.put("curve", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.curveTo(Double.parseDouble(elt.getAttribute("x1")),
@@ -436,6 +468,7 @@ public class mxDomOutputParser
 
 		handlers.put("close", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.close();
@@ -444,6 +477,7 @@ public class mxDomOutputParser
 
 		handlers.put("stroke", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.stroke();
@@ -452,6 +486,7 @@ public class mxDomOutputParser
 
 		handlers.put("fill", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.fill();
@@ -460,6 +495,7 @@ public class mxDomOutputParser
 
 		handlers.put("fillstroke", new IElementHandler()
 		{
+			@Override
 			public void parseElement(Element elt)
 			{
 				canvas.fillAndStroke();

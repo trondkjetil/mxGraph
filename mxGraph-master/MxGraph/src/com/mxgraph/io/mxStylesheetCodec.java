@@ -50,6 +50,7 @@ public class mxStylesheetCodec extends mxObjectCodec
 	/**
 	 * Encodes the given mxStylesheet.
 	 */
+	@Override
 	public Node encode(mxCodec enc, Object obj)
 	{
 		Element node = enc.document.createElement(getName());
@@ -108,6 +109,7 @@ public class mxStylesheetCodec extends mxObjectCodec
 	/**
 	 * Decodes the given mxStylesheet.
 	 */
+	@Override
 	public Object decode(mxCodec dec, Node node, Object into)
 	{
 		Object obj = null;

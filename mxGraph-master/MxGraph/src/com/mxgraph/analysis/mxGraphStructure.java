@@ -417,6 +417,7 @@ public class mxGraphStructure
 
 				mxTraversal.bfs(aGraph, currVertex, new mxICellVisitor()
 				{
+					@Override
 					public boolean visit(Object vertex, Object edge)
 					{
 						currVertexList.add(vertex);
@@ -441,7 +442,7 @@ public class mxGraphStructure
 			result[i] = componentList.get(i).toArray();
 		}
 
-		return (Object[][]) result;
+		return result;
 	};
 
 	/**
@@ -462,6 +463,7 @@ public class mxGraphStructure
 
 			mxTraversal.bfs(aGraph, startVertex, new mxICellVisitor()
 			{
+				@Override
 				public boolean visit(Object vertex, Object edge)
 				{
 					bFSList.add(vertex);

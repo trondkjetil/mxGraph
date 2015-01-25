@@ -90,6 +90,7 @@ public class mxCellOverlay extends JComponent implements mxICellOverlay
 	/**
 	 * 
 	 */
+	@Override
 	public void paint(Graphics g)
 	{
 		g.drawImage(imageIcon.getImage(), 0, 0, getWidth(), getHeight(), this);
@@ -99,6 +100,7 @@ public class mxCellOverlay extends JComponent implements mxICellOverlay
 	 * (non-Javadoc)
 	 * @see com.mxgraph.swing.util.mxIOverlay#getBounds(com.mxgraph.view.mxCellState)
 	 */
+	@Override
 	public mxRectangle getBounds(mxCellState state)
 	{
 		boolean isEdge = state.getView().getGraph().getModel()

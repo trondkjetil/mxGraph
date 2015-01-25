@@ -15,6 +15,7 @@ public class mxConstCostFunction extends mxCostFunction
 		this.cost = cost;
 	};
 	
+	@Override
 	public double getCost(mxCellState state)
 	{
 		return cost;

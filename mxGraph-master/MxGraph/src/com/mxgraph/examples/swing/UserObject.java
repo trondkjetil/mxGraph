@@ -61,12 +61,14 @@ public class UserObject extends JFrame
 		mxGraph graph = new mxGraph()
 		{
 			// Overrides method to disallow edge label editing
+			@Override
 			public boolean isCellEditable(Object cell)
 			{
 				return !getModel().isEdge(cell);
 			}
 
 			// Overrides method to provide a cell label in the display
+			@Override
 			public String convertValueToString(Object cell)
 			{
 				if (cell instanceof mxCell)
@@ -102,6 +104,7 @@ public class UserObject extends JFrame
 			}
 
 			// Overrides method to store a cell label in the model
+			@Override
 			public void cellLabelChanged(Object cell, Object newValue,
 					boolean autoSize)
 			{
@@ -162,6 +165,7 @@ public class UserObject extends JFrame
 			 */
 			private static final long serialVersionUID = 6824440535661529806L;
 
+			@Override
 			public String getEditingValue(Object cell, EventObject trigger)
 			{
 				if (cell instanceof mxCell)

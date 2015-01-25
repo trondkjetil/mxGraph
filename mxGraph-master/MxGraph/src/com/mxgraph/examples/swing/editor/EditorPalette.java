@@ -25,6 +25,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.TransferHandler;
 
 import com.mxgraph.model.mxCell;
@@ -78,6 +79,7 @@ public class EditorPalette extends JPanel
 			 * (non-Javadoc)
 			 * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
 			 */
+			@Override
 			public void mousePressed(MouseEvent e)
 			{
 				clearSelection();
@@ -87,6 +89,7 @@ public class EditorPalette extends JPanel
 			 * (non-Javadoc)
 			 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
 			 */
+			@Override
 			public void mouseClicked(MouseEvent e)
 			{
 			}
@@ -95,6 +98,7 @@ public class EditorPalette extends JPanel
 			 * (non-Javadoc)
 			 * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
 			 */
+			@Override
 			public void mouseEntered(MouseEvent e)
 			{
 			}
@@ -103,6 +107,7 @@ public class EditorPalette extends JPanel
 			 * (non-Javadoc)
 			 * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
 			 */
+			@Override
 			public void mouseExited(MouseEvent e)
 			{
 			}
@@ -111,6 +116,7 @@ public class EditorPalette extends JPanel
 			 * (non-Javadoc)
 			 * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
 			 */
+			@Override
 			public void mouseReleased(MouseEvent e)
 			{
 			}
@@ -120,6 +126,7 @@ public class EditorPalette extends JPanel
 		// Shows a nice icon for drag and drop but doesn't import anything
 		setTransferHandler(new TransferHandler()
 		{
+			@Override
 			public boolean canImport(JComponent comp, DataFlavor[] flavors)
 			{
 				return true;
@@ -146,6 +153,7 @@ public class EditorPalette extends JPanel
 	/**
 	 * 
 	 */
+	@Override
 	public void paintComponent(Graphics g)
 	{
 		if (gradientColor == null)
@@ -281,8 +289,8 @@ public class EditorPalette extends JPanel
 		entry.setBackground(EditorPalette.this.getBackground().brighter());
 		entry.setFont(new Font(entry.getFont().getFamily(), 0, 10));
 
-		entry.setVerticalTextPosition(JLabel.BOTTOM);
-		entry.setHorizontalTextPosition(JLabel.CENTER);
+		entry.setVerticalTextPosition(SwingConstants.BOTTOM);
+		entry.setHorizontalTextPosition(SwingConstants.CENTER);
 		entry.setIconTextGap(0);
 
 		entry.setToolTipText(name);
@@ -295,6 +303,7 @@ public class EditorPalette extends JPanel
 			 * (non-Javadoc)
 			 * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
 			 */
+			@Override
 			public void mousePressed(MouseEvent e)
 			{
 				setSelectionEntry(entry, t);
@@ -304,6 +313,7 @@ public class EditorPalette extends JPanel
 			 * (non-Javadoc)
 			 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
 			 */
+			@Override
 			public void mouseClicked(MouseEvent e)
 			{
 			}
@@ -312,6 +322,7 @@ public class EditorPalette extends JPanel
 			 * (non-Javadoc)
 			 * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
 			 */
+			@Override
 			public void mouseEntered(MouseEvent e)
 			{
 			}
@@ -320,6 +331,7 @@ public class EditorPalette extends JPanel
 			 * (non-Javadoc)
 			 * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
 			 */
+			@Override
 			public void mouseExited(MouseEvent e)
 			{
 			}
@@ -328,6 +340,7 @@ public class EditorPalette extends JPanel
 			 * (non-Javadoc)
 			 * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
 			 */
+			@Override
 			public void mouseReleased(MouseEvent e)
 			{
 			}
@@ -340,6 +353,7 @@ public class EditorPalette extends JPanel
 			/**
 			 * 
 			 */
+			@Override
 			public void dragGestureRecognized(DragGestureEvent e)
 			{
 				e

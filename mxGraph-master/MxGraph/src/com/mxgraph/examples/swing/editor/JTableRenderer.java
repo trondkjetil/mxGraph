@@ -139,6 +139,7 @@ public class JTableRenderer extends JComponent
 				JTableRenderer.class.getResource(IMAGE_PATH + "minimize.gif")))
 		{
 
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				graph.foldCells(!graph.isCellCollapsed(cell), false,
@@ -179,6 +180,7 @@ public class JTableRenderer extends JComponent
 				new AdjustmentListener()
 				{
 
+					@Override
 					public void adjustmentValueChanged(AdjustmentEvent e)
 					{
 						graphContainer.refresh();
@@ -224,21 +226,25 @@ public class JTableRenderer extends JComponent
 			this.index = index;
 		}
 
+		@Override
 		public void mouseClicked(MouseEvent e)
 		{
 			// ignore
 		}
 
+		@Override
 		public void mouseEntered(MouseEvent e)
 		{
 			// ignore
 		}
 
+		@Override
 		public void mouseExited(MouseEvent e)
 		{
 			// ignore
 		}
 
+		@Override
 		public void mousePressed(MouseEvent e)
 		{
 			// Selects to create a handler for resizing
@@ -261,6 +267,7 @@ public class JTableRenderer extends JComponent
 			}
 		}
 
+		@Override
 		public void mouseReleased(MouseEvent e)
 		{
 			graphContainer.getGraphControl().dispatchEvent(
@@ -268,6 +275,7 @@ public class JTableRenderer extends JComponent
 							e, graphContainer.getGraphControl()));
 		}
 
+		@Override
 		public void mouseDragged(MouseEvent e)
 		{
 			graphContainer.getGraphControl().dispatchEvent(
@@ -275,6 +283,7 @@ public class JTableRenderer extends JComponent
 							e, graphContainer.getGraphControl()));
 		}
 
+		@Override
 		public void mouseMoved(MouseEvent e)
 		{
 			// ignore
@@ -344,6 +353,7 @@ public class JTableRenderer extends JComponent
 				 * 
 				 * @see javax.swing.TransferHandler#createTransferable(javax.swing.JComponent)
 				 */
+				@Override
 				protected Transferable createTransferable(JComponent c)
 				{
 					sourceRow = getSelectedRow();
@@ -365,6 +375,7 @@ public class JTableRenderer extends JComponent
 		/**
 		 * 
 		 */
+		@Override
 		public DropTarget getDropTarget()
 		{
 			if (!((mxGraphTransferHandler) graphContainer.getTransferHandler())
@@ -381,6 +392,7 @@ public class JTableRenderer extends JComponent
 		 * 
 		 * @see java.awt.dnd.DropTargetListener#dragEnter(java.awt.dnd.DropTargetDragEvent)
 		 */
+		@Override
 		public void dragEnter(DropTargetDragEvent e)
 		{
 
@@ -391,6 +403,7 @@ public class JTableRenderer extends JComponent
 		 * 
 		 * @see java.awt.dnd.DropTargetListener#dragOver(java.awt.dnd.DropTargetDragEvent)
 		 */
+		@Override
 		public void dragOver(DropTargetDragEvent e)
 		{
 			if (!((mxGraphTransferHandler) graphContainer.getTransferHandler())
@@ -408,6 +421,7 @@ public class JTableRenderer extends JComponent
 		 * 
 		 * @see java.awt.dnd.DropTargetListener#dropActionChanged(java.awt.dnd.DropTargetDragEvent)
 		 */
+		@Override
 		public void dropActionChanged(DropTargetDragEvent dtde)
 		{
 			// TODO Auto-generated method stub
@@ -419,6 +433,7 @@ public class JTableRenderer extends JComponent
 		 * 
 		 * @see java.awt.dnd.DropTargetListener#drop(java.awt.dnd.DropTargetDropEvent)
 		 */
+		@Override
 		public void drop(DropTargetDropEvent e)
 		{
 			if (dragSource != null)
@@ -447,6 +462,7 @@ public class JTableRenderer extends JComponent
 		 * 
 		 * @see java.awt.dnd.DropTargetListener#dragExit(java.awt.dnd.DropTargetEvent)
 		 */
+		@Override
 		public void dragExit(DropTargetEvent dte)
 		{
 			// TODO Auto-generated method stub
@@ -467,26 +483,31 @@ public class JTableRenderer extends JComponent
 				 */
 				private static final long serialVersionUID = -3642207266816170738L;
 
+				@Override
 				public int getColumnCount()
 				{
 					return colNames.length;
 				}
 
+				@Override
 				public int getRowCount()
 				{
 					return data.length;
 				}
 
+				@Override
 				public String getColumnName(int col)
 				{
 					return colNames[col];
 				}
 
+				@Override
 				public Object getValueAt(int row, int col)
 				{
 					return data[row][col];
 				}
 
+				@Override
 				public Class<? extends Object> getColumnClass(int c)
 				{
 					Object value = getValueAt(0, c);
@@ -497,6 +518,7 @@ public class JTableRenderer extends JComponent
 				 * Don't need to implement this method unless your table's
 				 * editable.
 				 */
+				@Override
 				public boolean isCellEditable(int row, int col)
 				{
 					return col == 0;
@@ -506,6 +528,7 @@ public class JTableRenderer extends JComponent
 				 * Don't need to implement this method unless your table's data
 				 * can change.
 				 */
+				@Override
 				public void setValueAt(Object value, int row, int col)
 				{
 					data[row][col] = value;

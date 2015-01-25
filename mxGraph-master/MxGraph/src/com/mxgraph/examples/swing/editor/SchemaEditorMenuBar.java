@@ -132,6 +132,7 @@ public class SchemaEditorMenuBar extends JMenuBar
 					/**
 					 * 
 					 */
+					@Override
 					public void actionPerformed(ActionEvent e)
 					{
 						if (graphComponent.isPageVisible()
@@ -148,6 +149,7 @@ public class SchemaEditorMenuBar extends JMenuBar
 			 * (non-Javadoc)
 			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				if (e.getSource() instanceof TogglePropertyItem)
@@ -166,6 +168,7 @@ public class SchemaEditorMenuBar extends JMenuBar
 							 * (non-Javadoc)
 							 * @see java.lang.Runnable#run()
 							 */
+							@Override
 							public void run()
 							{
 								graphComponent.scrollToCenter(true);
@@ -346,6 +349,7 @@ public class SchemaEditorMenuBar extends JMenuBar
 			/**
 			 * 
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				if (graphComponent.isPageVisible()
@@ -385,6 +389,7 @@ public class SchemaEditorMenuBar extends JMenuBar
 			final String clazz = lafs[i].getClassName();
 			menu.add(new AbstractAction(lafs[i].getName())
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					editor.setLookAndFeel(clazz);
@@ -402,6 +407,7 @@ public class SchemaEditorMenuBar extends JMenuBar
 			 * (non-Javadoc)
 			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				editor.about();

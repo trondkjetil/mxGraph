@@ -397,6 +397,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -430,6 +431,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = getGraph(e);
@@ -474,6 +476,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = getGraph(e);
@@ -510,6 +513,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = getGraph(e);
@@ -545,6 +549,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = getGraph(e);
@@ -588,6 +593,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = getGraph(e);
@@ -623,6 +629,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = getGraph(e);
@@ -660,6 +667,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = getGraph(e);
@@ -697,6 +705,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = getGraph(e);
@@ -745,6 +754,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			Object source = e.getSource();
@@ -794,6 +804,7 @@ public class mxGraphActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = getGraph(e);

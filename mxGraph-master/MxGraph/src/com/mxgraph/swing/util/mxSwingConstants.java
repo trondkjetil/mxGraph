@@ -169,6 +169,7 @@ public class mxSwingConstants
 		 */
 		private static final long serialVersionUID = 1348016511717964310L;
 
+		@Override
 		public void paintBorder(Component c, Graphics g, int x, int y,
 				int width, int height)
 		{

@@ -183,6 +183,7 @@ public class mxSession implements mxDiagramChangeListener
 	 * (non-Javadoc)
 	 * @see com.mxgraph.sharing.mxSharedDiagram.mxDiagramChangeListener#diagramChanged(java.lang.Object, org.w3c.dom.Node)
 	 */
+	@Override
 	public synchronized void diagramChanged(Object sender, String edits)
 	{
 		if (sender != this)

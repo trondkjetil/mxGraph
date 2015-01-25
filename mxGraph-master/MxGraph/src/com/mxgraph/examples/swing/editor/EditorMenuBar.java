@@ -144,6 +144,7 @@ public class EditorMenuBar extends JMenuBar
 					/**
 					 * 
 					 */
+					@Override
 					public void actionPerformed(ActionEvent e)
 					{
 						if (graphComponent.isPageVisible() && graphComponent.isCenterPage())
@@ -163,6 +164,7 @@ public class EditorMenuBar extends JMenuBar
 			 * (non-Javadoc)
 			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				if (e.getSource() instanceof TogglePropertyItem)
@@ -179,6 +181,7 @@ public class EditorMenuBar extends JMenuBar
 							 * (non-Javadoc)
 							 * @see java.lang.Runnable#run()
 							 */
+							@Override
 							public void run()
 							{
 								graphComponent.scrollToCenter(true);
@@ -336,6 +339,7 @@ public class EditorMenuBar extends JMenuBar
 			/**
 			 * 
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				graphComponent.zoomAndCenter();
@@ -364,6 +368,7 @@ public class EditorMenuBar extends JMenuBar
 			/**
 			 * 
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				if (graphComponent.isPageVisible() && graphComponent.isCenterPage())
@@ -388,7 +393,7 @@ public class EditorMenuBar extends JMenuBar
 
 		submenu.add(new TogglePropertyItem(graph, mxResources.get("htmlLabels"), "HtmlLabels", true));
 		submenu.add(new TogglePropertyItem(graph, mxResources.get("showLabels"), "LabelsVisible", true));
-
+	
 		submenu.addSeparator();
 
 		submenu.add(new TogglePropertyItem(graph, mxResources.get("moveEdgeLabels"), "EdgeLabelsMovable"));
@@ -440,6 +445,7 @@ public class EditorMenuBar extends JMenuBar
 				 */
 				private static final long serialVersionUID = 7588919504149148501L;
 
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					editor.setLookAndFeel(clazz);
@@ -509,6 +515,7 @@ public class EditorMenuBar extends JMenuBar
 			 * (non-Javadoc)
 			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				editor.about();
@@ -813,6 +820,7 @@ public class EditorMenuBar extends JMenuBar
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -905,6 +913,7 @@ public class EditorMenuBar extends JMenuBar
 			this.aGraph = aGraph;
 		}
 
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)

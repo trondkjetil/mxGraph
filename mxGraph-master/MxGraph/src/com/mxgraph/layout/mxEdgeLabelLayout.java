@@ -27,6 +27,7 @@ public class mxEdgeLabelLayout extends mxGraphLayout
 	 * (non-Javadoc)
 	 * @see com.mxgraph.layout.mxIGraphLayout#execute(java.lang.Object)
 	 */
+	@Override
 	public void execute(Object parent)
 	{
 		mxGraphView view = graph.getView();

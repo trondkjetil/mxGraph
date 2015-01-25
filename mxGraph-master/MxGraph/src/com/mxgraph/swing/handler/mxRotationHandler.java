@@ -99,6 +99,7 @@ public class mxRotationHandler extends mxMouseAdapter
 		// Installs the paint handler
 		graphComponent.addListener(mxEvent.AFTER_PAINT, new mxIEventListener()
 		{
+			@Override
 			public void invoke(Object sender, mxEventObject evt)
 			{
 				Graphics g = (Graphics) evt.getProperty("g");
@@ -162,6 +163,7 @@ public class mxRotationHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
 		if (currentState != null && handle.getParent() != null
@@ -192,6 +194,7 @@ public class mxRotationHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseMoved(MouseEvent e)
 	{
 		if (graphComponent.isEnabled() && isEnabled())
@@ -253,6 +256,7 @@ public class mxRotationHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		if (graphComponent.isEnabled() && isEnabled() && !e.isConsumed()
@@ -289,6 +293,7 @@ public class mxRotationHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		if (graphComponent.isEnabled() && isEnabled() && !e.isConsumed()

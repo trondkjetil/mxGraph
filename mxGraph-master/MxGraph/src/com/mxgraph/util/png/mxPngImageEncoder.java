@@ -126,71 +126,85 @@ class ChunkStream extends OutputStream implements DataOutput
 		this.dos = new DataOutputStream(baos);
 	}
 
+	@Override
 	public void write(byte[] b) throws IOException
 	{
 		dos.write(b);
 	}
 
+	@Override
 	public void write(byte[] b, int off, int len) throws IOException
 	{
 		dos.write(b, off, len);
 	}
 
+	@Override
 	public void write(int b) throws IOException
 	{
 		dos.write(b);
 	}
 
+	@Override
 	public void writeBoolean(boolean v) throws IOException
 	{
 		dos.writeBoolean(v);
 	}
 
+	@Override
 	public void writeByte(int v) throws IOException
 	{
 		dos.writeByte(v);
 	}
 
+	@Override
 	public void writeBytes(String s) throws IOException
 	{
 		dos.writeBytes(s);
 	}
 
+	@Override
 	public void writeChar(int v) throws IOException
 	{
 		dos.writeChar(v);
 	}
 
+	@Override
 	public void writeChars(String s) throws IOException
 	{
 		dos.writeChars(s);
 	}
 
+	@Override
 	public void writeDouble(double v) throws IOException
 	{
 		dos.writeDouble(v);
 	}
 
+	@Override
 	public void writeFloat(float v) throws IOException
 	{
 		dos.writeFloat(v);
 	}
 
+	@Override
 	public void writeInt(int v) throws IOException
 	{
 		dos.writeInt(v);
 	}
 
+	@Override
 	public void writeLong(long v) throws IOException
 	{
 		dos.writeLong(v);
 	}
 
+	@Override
 	public void writeShort(int v) throws IOException
 	{
 		dos.writeShort(v);
 	}
 
+	@Override
 	public void writeUTF(String str) throws IOException
 	{
 		dos.writeUTF(str);
@@ -226,6 +240,7 @@ class ChunkStream extends OutputStream implements DataOutput
 	 * 
 	 * @throws IOException
 	 */
+	@Override
 	public void close() throws IOException
 	{
 
@@ -261,6 +276,7 @@ class IDATOutputStream extends FilterOutputStream
 		this.buffer = new byte[segmentLength];
 	}
 
+	@Override
 	public void close() throws IOException
 	{
 		flush();
@@ -274,6 +290,7 @@ class IDATOutputStream extends FilterOutputStream
 		out.write(x & 0xff);
 	}
 
+	@Override
 	public void flush() throws IOException
 	{
 		// Length
@@ -294,11 +311,13 @@ class IDATOutputStream extends FilterOutputStream
 		bytesWritten = 0;
 	}
 
+	@Override
 	public void write(byte[] b) throws IOException
 	{
 		this.write(b, 0, b.length);
 	}
 
+	@Override
 	public void write(byte[] b, int off, int len) throws IOException
 	{
 		while (len > 0)
@@ -316,6 +335,7 @@ class IDATOutputStream extends FilterOutputStream
 		}
 	}
 
+	@Override
 	public void write(int b) throws IOException
 	{
 		buffer[bytesWritten++] = (byte) b;

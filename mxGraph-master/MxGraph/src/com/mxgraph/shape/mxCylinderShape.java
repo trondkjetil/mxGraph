@@ -13,6 +13,7 @@ public class mxCylinderShape extends mxBasicShape
 	/**
 	 * Draws a cylinder for the given parameters.
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		Rectangle rect = state.getRectangle();

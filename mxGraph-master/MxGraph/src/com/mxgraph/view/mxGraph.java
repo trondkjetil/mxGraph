@@ -532,6 +532,7 @@ public class mxGraph extends mxEventSource
 	 */
 	protected mxIEventListener fullRepaintHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object sender, mxEventObject evt)
 		{
 			repaint();
@@ -543,6 +544,7 @@ public class mxGraph extends mxEventSource
 	 */
 	protected mxIEventListener updateOriginHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object sender, mxEventObject evt)
 		{
 			if (isAutoOrigin())
@@ -557,10 +559,11 @@ public class mxGraph extends mxEventSource
 	 */
 	protected mxIEventListener graphModelChangeHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object sender, mxEventObject evt)
 		{
 			mxRectangle dirty = graphModelChanged((mxIGraphModel) sender,
-					(List<mxUndoableChange>) ((mxUndoableEdit) evt
+					((mxUndoableEdit) evt
 							.getProperty("edit")).getChanges());
 			repaint(dirty);
 		}
@@ -5519,6 +5522,7 @@ public class mxGraph extends mxEventSource
 	{
 		return mxGraphModel.filterCells(cells, new Filter()
 		{
+			@Override
 			public boolean filter(Object cell)
 			{
 				return isCellMovable(cell);
@@ -5657,6 +5661,7 @@ public class mxGraph extends mxEventSource
 	{
 		return mxGraphModel.filterCells(cells, new Filter()
 		{
+			@Override
 			public boolean filter(Object cell)
 			{
 				return isCellDeletable(cell);
@@ -5708,6 +5713,7 @@ public class mxGraph extends mxEventSource
 	{
 		return mxGraphModel.filterCells(cells, new Filter()
 		{
+			@Override
 			public boolean filter(Object cell)
 			{
 				return isCellCloneable(cell);
@@ -6573,6 +6579,7 @@ public class mxGraph extends mxEventSource
 	{
 		return mxGraphModel.filterCells(cells, new Filter()
 		{
+			@Override
 			public boolean filter(Object cell)
 			{
 				return isCellFoldable(cell, collapse);
@@ -7749,6 +7756,7 @@ public class mxGraph extends mxEventSource
 					/**
 					 * 
 					 */
+					@Override
 					public boolean filter(Object cell)
 					{
 						return view.getState(cell) != null

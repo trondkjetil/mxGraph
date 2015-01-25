@@ -500,6 +500,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 	 */
 	protected mxIEventListener updateHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object sender, mxEventObject evt)
 		{
 			updateComponents();
@@ -512,6 +513,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 	 */
 	protected mxIEventListener repaintHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			mxRectangle dirty = (mxRectangle) evt.getProperty("region");
@@ -570,6 +572,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		/**
 		 * 
 		 */
+		@Override
 		public void propertyChange(PropertyChangeEvent evt)
 		{
 			if (evt.getPropertyName().equals("view"))
@@ -619,6 +622,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		/**
 		 * 
 		 */
+		@Override
 		public void invoke(Object sender, mxEventObject evt)
 		{
 			if (!zooming)
@@ -657,6 +661,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 	{
 		graphControl.addMouseListener(new MouseAdapter()
 		{
+			@Override
 			public void mousePressed(MouseEvent e)
 			{
 				if (!hasFocus())
@@ -674,6 +679,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 	{
 		addKeyListener(new KeyAdapter()
 		{
+			@Override
 			public void keyPressed(KeyEvent e)
 			{
 				if (e.getKeyCode() == KeyEvent.VK_ESCAPE && isEscapeEnabled())
@@ -691,6 +697,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 	{
 		addComponentListener(new ComponentAdapter()
 		{
+			@Override
 			public void componentResized(ComponentEvent e)
 			{
 				zoomAndCenter();
@@ -706,6 +713,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 	{
 		graphControl.addMouseListener(new MouseAdapter()
 		{
+			@Override
 			public void mouseReleased(MouseEvent e)
 			{
 				if (isEnabled())
@@ -1629,6 +1637,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		// for the previous maximum (ie. it must be invoked later).
 		SwingUtilities.invokeLater(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				maintainScrollBar(true, newScale / scale, center);
@@ -1654,6 +1663,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 			// Causes two repaints, see zoomTo for more details
 			SwingUtilities.invokeLater(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					Dimension pageSize = getPreferredSizeForPage();
@@ -1732,6 +1742,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 
 					SwingUtilities.invokeLater(new Runnable()
 					{
+						@Override
 						public void run()
 						{
 							if (center)
@@ -2518,6 +2529,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 	{
 		return mxGraphModel.filterCells(cells, new Filter()
 		{
+			@Override
 			public boolean filter(Object cell)
 			{
 				return canImportCell(cell);
@@ -2561,6 +2573,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 	{
 		return mxGraphModel.filterCells(cells, new Filter()
 		{
+			@Override
 			public boolean filter(Object cell)
 			{
 				return canExportCell(cell);
@@ -2721,6 +2734,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 	 * @return Returns {@link Printable#PAGE_EXISTS} or
 	 *         {@link Printable#NO_SUCH_PAGE}.
 	 */
+	@Override
 	public int print(Graphics g, PageFormat printFormat, int page)
 	{
 		int result = NO_SUCH_PAGE;
@@ -3416,6 +3430,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 					/**
 					 * Selects the associated cell in the graph
 					 */
+					@Override
 					public void mousePressed(MouseEvent e)
 					{
 						if (getGraph().isEnabled())
@@ -4024,6 +4039,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		{
 			addMouseListener(new MouseAdapter()
 			{
+				@Override
 				public void mouseReleased(MouseEvent e)
 				{
 					if (translate.x != 0 || translate.y != 0)
@@ -4140,6 +4156,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		/**
 		 * 
 		 */
+		@Override
 		public String getToolTipText(MouseEvent e)
 		{
 			String tip = getSelectionCellsHandler().getToolTipText(e);
@@ -4217,6 +4234,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		/**
 		 * 
 		 */
+		@Override
 		public void paint(Graphics g)
 		{
 			g.translate(translate.x, translate.y);
@@ -4231,6 +4249,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		/**
 		 * 
 		 */
+		@Override
 		public void paintComponent(Graphics g)
 		{
 			super.paintComponent(g);
@@ -4497,6 +4516,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		 * @see
 		 * java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mouseClicked(MouseEvent e)
 		{
 			graphComponent.getGraphControl().dispatchEvent(
@@ -4510,6 +4530,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		 * @see
 		 * java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mouseEntered(MouseEvent e)
 		{
 			// Redirecting this would cause problems on the Mac
@@ -4522,6 +4543,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		 * @see
 		 * java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mouseExited(MouseEvent e)
 		{
 			mouseClicked(e);
@@ -4533,6 +4555,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		 * @see
 		 * java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mousePressed(MouseEvent e)
 		{
 			mouseClicked(e);
@@ -4544,6 +4567,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		 * @see
 		 * java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
 		 */
+		@Override
 		public void mouseReleased(MouseEvent e)
 		{
 			mouseClicked(e);
@@ -4556,6 +4580,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		 * java.awt.event.MouseMotionListener#mouseDragged(java.awt.event.MouseEvent
 		 * )
 		 */
+		@Override
 		public void mouseDragged(MouseEvent e)
 		{
 			mouseClicked(e);
@@ -4568,6 +4593,7 @@ public class mxGraphComponent extends JScrollPane implements Printable
 		 * java.awt.event.MouseMotionListener#mouseMoved(java.awt.event.MouseEvent
 		 * )
 		 */
+		@Override
 		public void mouseMoved(MouseEvent e)
 		{
 			mouseClicked(e);

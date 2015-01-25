@@ -88,6 +88,7 @@ public class mxChildChangeCodec extends mxObjectCodec
 	 * Reads the cells into the graph model. All cells are children of the root
 	 * element in the node.
 	 */
+	@Override
 	public Node beforeDecode(mxCodec dec, Node node, Object into)
 	{
 		if (into instanceof mxChildChange)
@@ -134,7 +135,7 @@ public class mxChildChangeCodec extends mxObjectCodec
 			else
 			{
 				String childRef = ((Element) node).getAttribute("child");
-				change.setChild((mxICell) dec.getObject(childRef));
+				change.setChild(dec.getObject(childRef));
 			}
 		}
 

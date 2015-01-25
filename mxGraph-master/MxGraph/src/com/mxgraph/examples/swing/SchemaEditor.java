@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.ImageIcon;
 import javax.swing.JToolBar;
+import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 import com.mxgraph.examples.swing.editor.BasicGraphEditor;
@@ -35,6 +36,7 @@ public class SchemaEditor extends BasicGraphEditor
 			/**
 			 * Allows expanding tables
 			 */
+			@Override
 			public boolean isCellFoldable(Object cell, boolean collapse)
 			{
 				return model.isVertex(cell);
@@ -50,6 +52,7 @@ public class SchemaEditor extends BasicGraphEditor
 			/**
 			 * Disables folding icons.
 			 */
+			@Override
 			public ImageIcon getFoldingIcon(mxCellState state)
 			{
 				return null;
@@ -104,9 +107,10 @@ public class SchemaEditor extends BasicGraphEditor
 	/**
 	 * 
 	 */
+	@Override
 	protected void installToolBar()
 	{
-		add(new SchemaEditorToolBar(this, JToolBar.HORIZONTAL),
+		add(new SchemaEditorToolBar(this, SwingConstants.HORIZONTAL),
 				BorderLayout.NORTH);
 	}
 

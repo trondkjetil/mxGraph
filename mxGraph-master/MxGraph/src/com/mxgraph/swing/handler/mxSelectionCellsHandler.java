@@ -19,8 +19,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.Map;
-
 import javax.swing.SwingUtilities;
 
 import com.mxgraph.swing.mxGraphComponent;
@@ -80,6 +78,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 	 */
 	protected transient mxIEventListener refreshHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			if (isEnabled())
@@ -99,6 +98,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 		 * (non-Javadoc)
 		 * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
 		 */
+		@Override
 		public void propertyChange(PropertyChangeEvent evt)
 		{
 			if (evt.getPropertyName().equals("vertexLabelsMovable")
@@ -127,6 +127,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 
 		graphComponent.addPropertyChangeListener(new PropertyChangeListener()
 		{
+			@Override
 			public void propertyChange(PropertyChangeEvent evt)
 			{
 				if (evt.getPropertyName().equals("graph"))
@@ -140,6 +141,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 		// Installs the paint handler
 		graphComponent.addListener(mxEvent.PAINT, new mxIEventListener()
 		{
+			@Override
 			public void invoke(Object sender, mxEventObject evt)
 			{
 				Graphics g = (Graphics) evt.getProperty("g");
@@ -262,6 +264,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 	 * called from the connection handler as subhandles have precedence
 	 * over the connection handler.
 	 */
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
 		if (graphComponent.isEnabled()
@@ -279,6 +282,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseMoved(MouseEvent e)
 	{
 		if (graphComponent.isEnabled() && isEnabled())
@@ -295,6 +299,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		if (graphComponent.isEnabled() && isEnabled())
@@ -311,6 +316,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		if (graphComponent.isEnabled() && isEnabled())
@@ -462,6 +468,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 	 * (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseClicked(MouseEvent arg0)
 	{
 		// empty
@@ -471,6 +478,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 	 * (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseEntered(MouseEvent arg0)
 	{
 		// empty
@@ -480,6 +488,7 @@ public class mxSelectionCellsHandler implements MouseListener,
 	 * (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseExited(MouseEvent arg0)
 	{
 		// empty

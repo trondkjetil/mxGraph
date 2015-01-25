@@ -38,6 +38,7 @@ public class mxElbowEdgeHandler extends mxEdgeHandler
 	 * Hook for subclassers to return tooltip texts for certain points on the
 	 * handle.
 	 */
+	@Override
 	public String getToolTipText(MouseEvent e)
 	{
 		int index = getIndexAt(e.getX(), e.getY());
@@ -53,6 +54,7 @@ public class mxElbowEdgeHandler extends mxEdgeHandler
 	/**
 	 * 
 	 */
+	@Override
 	protected boolean isFlipEvent(MouseEvent e)
 	{
 		return e.getClickCount() == 2 && index == 1;
@@ -61,6 +63,7 @@ public class mxElbowEdgeHandler extends mxEdgeHandler
 	/**
 	 * Returns true if the given index is the index of the last handle.
 	 */
+	@Override
 	public boolean isLabel(int index)
 	{
 		return index == 3;
@@ -69,6 +72,7 @@ public class mxElbowEdgeHandler extends mxEdgeHandler
 	/**
 	 * 
 	 */
+	@Override
 	protected Rectangle[] createHandles()
 	{
 		p = createPoints(state);

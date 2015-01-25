@@ -76,6 +76,7 @@ public class mxMorphing extends mxAnimation
 		// Installs the paint handler
 		graphComponent.addListener(mxEvent.AFTER_PAINT, new mxIEventListener()
 		{
+			@Override
 			public void invoke(Object sender, mxEventObject evt)
 			{
 				Graphics g = (Graphics) evt.getProperty("g");
@@ -141,6 +142,7 @@ public class mxMorphing extends mxAnimation
 	/**
 	 * Animation step.
 	 */
+	@Override
 	public void updateAnimation()
 	{
 		preview = new mxCellStatePreview(graphComponent, false);
@@ -172,6 +174,7 @@ public class mxMorphing extends mxAnimation
 	/**
 	 * 
 	 */
+	@Override
 	public void stopAnimation()
 	{
 		graphComponent.getGraph().getView().revalidate();

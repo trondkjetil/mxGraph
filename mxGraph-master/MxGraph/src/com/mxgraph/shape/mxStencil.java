@@ -104,6 +104,7 @@ public class mxStencil implements mxIShape
 	/**
 	 * Paints the stencil for the given state.
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas gc, mxCellState state)
 	{
 		Map<String, Object> style = state.getStyle();

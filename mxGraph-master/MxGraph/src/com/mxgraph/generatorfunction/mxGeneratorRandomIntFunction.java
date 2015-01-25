@@ -18,6 +18,7 @@ public class mxGeneratorRandomIntFunction extends mxGeneratorFunction
 		setWeightRange(minWeight, maxWeight);
 	};
 
+	@Override
 	public double getCost(mxCellState state)
 	{
 		//assumed future parameters

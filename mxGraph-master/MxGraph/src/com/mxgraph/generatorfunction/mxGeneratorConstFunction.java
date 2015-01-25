@@ -16,6 +16,7 @@ public class mxGeneratorConstFunction extends mxGeneratorFunction
 		this.cost = cost;
 	};
 	
+	@Override
 	public double getCost(mxCellState state)
 	{
 		return cost;

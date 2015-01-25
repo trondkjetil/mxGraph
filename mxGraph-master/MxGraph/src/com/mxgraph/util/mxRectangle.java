@@ -246,6 +246,7 @@ public class mxRectangle extends mxPoint
 	 * 
 	 * Returns true if the given object equals this rectangle.
 	 */
+	@Override
 	public boolean equals(Object obj)
 	{
 		if (obj instanceof mxRectangle)
@@ -263,6 +264,7 @@ public class mxRectangle extends mxPoint
 	/**
 	 * Returns a new instance of the same rectangle.
 	 */
+	@Override
 	public Object clone()
 	{
 		mxRectangle clone = (mxRectangle) super.clone();
@@ -279,6 +281,7 @@ public class mxRectangle extends mxPoint
 	 * @return a <code>String</code> representing this
 	 * <code>mxRectangle</code>.
 	 */
+	@Override
 	public String toString()
 	{
 		return getClass().getName() + "[x=" + x + ",y=" + y + ",w=" + width

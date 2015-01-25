@@ -361,6 +361,7 @@ public class mxGraphSelectionModel extends mxEventSource
 		/**
 		 * 
 		 */
+		@Override
 		public void execute()
 		{
 			if (removed != null)

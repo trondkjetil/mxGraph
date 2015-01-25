@@ -34,6 +34,7 @@ public class SchemaGraphComponent extends mxGraphComponent
 			/**
 			 * 
 			 */
+			@Override
 			public void updateFloatingTerminalPoint(mxCellState edge,
 					mxCellState start, mxCellState end, boolean isSource)
 			{
@@ -136,6 +137,7 @@ public class SchemaGraphComponent extends mxGraphComponent
 	/**
 	 * 
 	 */
+	@Override
 	public Component[] createComponents(mxCellState state)
 	{
 		if (getGraph().getModel().isVertex(state.getCell()))

@@ -52,6 +52,7 @@ public class mxPerimeter
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxPerimeter.mxPerimeterFunction#apply
 		 */
+		@Override
 		public mxPoint apply(mxRectangle bounds, mxCellState vertex,
 				mxPoint next, boolean orthogonal)
 		{
@@ -138,6 +139,7 @@ public class mxPerimeter
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxPerimeter.mxPerimeterFunction#apply
 		 */
+		@Override
 		public mxPoint apply(mxRectangle bounds, mxCellState vertex,
 				mxPoint next, boolean orthogonal)
 		{
@@ -251,6 +253,7 @@ public class mxPerimeter
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxPerimeter.mxPerimeterFunction#apply
 		 */
+		@Override
 		public mxPoint apply(mxRectangle bounds, mxCellState vertex,
 				mxPoint next, boolean orthogonal)
 		{
@@ -341,6 +344,7 @@ public class mxPerimeter
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxPerimeter.mxPerimeterFunction#apply(com.mxgraph.utils.mxRectangle, com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, boolean, com.mxgraph.utils.mxPoint)
 		 */
+		@Override
 		public mxPoint apply(mxRectangle bounds, mxCellState vertex,
 				mxPoint next, boolean orthogonal)
 		{
@@ -502,6 +506,7 @@ public class mxPerimeter
 	 */
 	public static mxPerimeterFunction HexagonPerimeter = new mxPerimeterFunction()
 	{
+		@Override
 		public mxPoint apply(mxRectangle bounds, mxCellState vertex,
 				mxPoint next, boolean orthogonal)
 		{

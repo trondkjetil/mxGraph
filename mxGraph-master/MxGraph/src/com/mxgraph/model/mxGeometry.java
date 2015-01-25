@@ -318,6 +318,7 @@ public class mxGeometry extends mxRectangle
 	/**
 	 * Returns a clone of the cell.
 	 */
+	@Override
 	public Object clone()
 	{
 		mxGeometry clone = (mxGeometry) super.clone();

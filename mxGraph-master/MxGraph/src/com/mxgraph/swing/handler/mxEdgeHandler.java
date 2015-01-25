@@ -75,6 +75,7 @@ public class mxEdgeHandler extends mxCellHandler
 
 		// Only returns edges if they are connectable and never returns
 		// the edge that is currently being modified
+		@Override
 		protected Object getCell(MouseEvent e)
 		{
 			mxGraph graph = graphComponent.getGraph();
@@ -91,6 +92,7 @@ public class mxEdgeHandler extends mxCellHandler
 		}
 
 		// Sets the highlight color according to isValidConnection
+		@Override
 		protected boolean isValidState(mxCellState state)
 		{
 			mxGraphView view = graphComponent.getGraph().getView();
@@ -142,6 +144,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * No flip event is ignored.
 	 */
+	@Override
 	protected boolean isIgnoredEvent(MouseEvent e)
 	{
 		return !isFlipEvent(e) && super.isIgnoredEvent(e);
@@ -184,6 +187,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * Hides the middle handle if the edge is not bendable.
 	 */
+	@Override
 	protected boolean isHandleVisible(int index)
 	{
 		return super.isHandleVisible(index)
@@ -201,6 +205,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	protected Rectangle[] createHandles()
 	{
 		p = createPoints(state);
@@ -220,6 +225,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	protected Color getHandleFillColor(int index)
 	{
 		boolean source = isSource(index);
@@ -253,6 +259,7 @@ public class mxEdgeHandler extends mxCellHandler
 	 * @param y
 	 * @return Returns the inde of the handle at the given location.
 	 */
+	@Override
 	public int getIndexAt(int x, int y)
 	{
 		int index = super.getIndexAt(x, y);
@@ -302,6 +309,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	protected JComponent createPreview()
 	{
 		JPanel preview = new JPanel()
@@ -311,6 +319,7 @@ public class mxEdgeHandler extends mxCellHandler
 			 */
 			private static final long serialVersionUID = -894546588972313020L;
 
+			@Override
 			public void paint(Graphics g)
 			{
 				super.paint(g);
@@ -418,6 +427,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
 		super.mousePressed(e);
@@ -443,6 +453,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		if (!e.isConsumed() && first != null)
@@ -614,6 +625,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		mxGraph graph = graphComponent.getGraph();
@@ -693,6 +705,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * Extends the implementation to reset the current error and marker.
 	 */
+	@Override
 	public void reset()
 	{
 		super.reset();
@@ -826,6 +839,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	protected Cursor getCursor(MouseEvent e, int index)
 	{
 		Cursor cursor = null;
@@ -845,6 +859,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public Color getSelectionColor()
 	{
 		return mxSwingConstants.EDGE_SELECTION_COLOR;
@@ -853,6 +868,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public Stroke getSelectionStroke()
 	{
 		return mxSwingConstants.EDGE_SELECTION_STROKE;
@@ -861,6 +877,7 @@ public class mxEdgeHandler extends mxCellHandler
 	/**
 	 * 
 	 */
+	@Override
 	public void paint(Graphics g)
 	{
 		Graphics2D g2 = (Graphics2D) g;

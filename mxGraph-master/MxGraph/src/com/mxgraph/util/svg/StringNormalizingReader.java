@@ -69,6 +69,7 @@ public class StringNormalizingReader extends NormalizingReader
 	 * character is available, an I/O error occurs, or the end of the
 	 * stream is reached.
 	 */
+	@Override
 	public int read() throws IOException
 	{
 		int result = (length == next) ? -1 : string.charAt(next++);
@@ -97,6 +98,7 @@ public class StringNormalizingReader extends NormalizingReader
 	/**
 	 * Returns the current line in the stream.
 	 */
+	@Override
 	public int getLine()
 	{
 		return line;
@@ -105,6 +107,7 @@ public class StringNormalizingReader extends NormalizingReader
 	/**
 	 * Returns the current column in the stream.
 	 */
+	@Override
 	public int getColumn()
 	{
 		return column;
@@ -113,6 +116,7 @@ public class StringNormalizingReader extends NormalizingReader
 	/**
 	 * Close the stream.
 	 */
+	@Override
 	public void close() throws IOException
 	{
 		string = null;

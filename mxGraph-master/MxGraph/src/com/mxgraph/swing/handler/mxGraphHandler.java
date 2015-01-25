@@ -237,6 +237,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 		// Installs the paint handler
 		graphComponent.addListener(mxEvent.AFTER_PAINT, new mxIEventListener()
 		{
+			@Override
 			public void invoke(Object sender, mxEventObject evt)
 			{
 				Graphics g = (Graphics) evt.getProperty("g");
@@ -257,6 +258,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 		// Listens to changes of the transferhandler
 		graphComponent.addPropertyChangeListener(new PropertyChangeListener()
 		{
+			@Override
 			public void propertyChange(PropertyChangeEvent evt)
 			{
 				if (evt.getPropertyName().equals("transferHandler"))
@@ -282,6 +284,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 	{
 		DragGestureListener dragGestureListener = new DragGestureListener()
 		{
+			@Override
 			public void dragGestureRecognized(DragGestureEvent e)
 			{
 				if (graphComponent.isDragEnabled() && first != null)
@@ -303,6 +306,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 										/**
 										 * 
 										 */
+										@Override
 										public void dragDropEnd(
 												DragSourceDropEvent dsde)
 										{
@@ -439,6 +443,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 			/**
 			 * 
 			 */
+			@Override
 			public boolean isEnabled()
 			{
 				return graphComponent.getGraph().isDropEnabled();
@@ -447,6 +452,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 			/**
 			 * 
 			 */
+			@Override
 			public Object getCell(MouseEvent e)
 			{
 				mxIGraphModel model = graphComponent.getGraph().getModel();
@@ -688,6 +694,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseMoved(MouseEvent e)
 	{
 		if (graphComponent.isEnabled() && isEnabled() && !e.isConsumed())
@@ -738,6 +745,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 	/**
 	 * 
 	 */
+	@Override
 	public void dragEnter(DropTargetDragEvent e)
 	{
 		JComponent component = getDropTarget(e);
@@ -835,6 +843,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 	/**
 	 * 
 	 */
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
 		if (graphComponent.isEnabled() && isEnabled() && !e.isConsumed()
@@ -914,6 +923,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 	/**
 	 * 
 	 */
+	@Override
 	public void dropActionChanged(DropTargetDragEvent e)
 	{
 		// do nothing
@@ -923,6 +933,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 	 * 
 	 * @param e
 	 */
+	@Override
 	public void dragOver(DropTargetDragEvent e)
 	{
 		if (canImport)
@@ -998,6 +1009,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		// LATER: Check scrollborder, use scroll-increments, do not
@@ -1131,6 +1143,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 	 * 
 	 * @param e
 	 */
+	@Override
 	public void dragExit(DropTargetEvent e)
 	{
 		mxGraphTransferHandler handler = getGraphTransferHandler(e);
@@ -1150,6 +1163,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 	 * 
 	 * @param e
 	 */
+	@Override
 	public void drop(DropTargetDropEvent e)
 	{
 		if (canImport)
@@ -1171,6 +1185,7 @@ public class mxGraphHandler extends mxMouseAdapter implements
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		if (graphComponent.isEnabled() && isEnabled() && !e.isConsumed())

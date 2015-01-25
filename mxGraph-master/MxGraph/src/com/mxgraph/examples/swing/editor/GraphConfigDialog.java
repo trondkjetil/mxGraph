@@ -247,6 +247,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -294,6 +295,7 @@ public class GraphConfigDialog extends JDialog
 			});
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -335,6 +337,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -362,6 +365,7 @@ public class GraphConfigDialog extends JDialog
 			});
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -405,6 +409,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -436,6 +441,7 @@ public class GraphConfigDialog extends JDialog
 			});
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -477,6 +483,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -516,6 +523,7 @@ public class GraphConfigDialog extends JDialog
 
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -555,6 +563,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -580,6 +589,7 @@ public class GraphConfigDialog extends JDialog
 			});
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -625,6 +635,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -654,6 +665,7 @@ public class GraphConfigDialog extends JDialog
 
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -693,6 +705,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -725,6 +738,7 @@ public class GraphConfigDialog extends JDialog
 			});
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -766,6 +780,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -798,6 +813,7 @@ public class GraphConfigDialog extends JDialog
 			});
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -843,6 +859,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -878,6 +895,7 @@ public class GraphConfigDialog extends JDialog
 
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -923,6 +941,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -950,6 +969,7 @@ public class GraphConfigDialog extends JDialog
 			});
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -987,6 +1007,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -1007,6 +1028,7 @@ public class GraphConfigDialog extends JDialog
 			});
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -1043,6 +1065,7 @@ public class GraphConfigDialog extends JDialog
 
 			applyButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -1219,6 +1242,7 @@ public class GraphConfigDialog extends JDialog
 			});
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;
@@ -1257,6 +1281,7 @@ public class GraphConfigDialog extends JDialog
 			{
 				double distance = 0;
 
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					applyValues();
@@ -1367,6 +1392,7 @@ public class GraphConfigDialog extends JDialog
 			});
 			closeButton.addActionListener(new ActionListener()
 			{
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					insertGraph = false;

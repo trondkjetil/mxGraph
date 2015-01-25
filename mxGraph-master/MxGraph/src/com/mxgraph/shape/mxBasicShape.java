@@ -21,6 +21,7 @@ public class mxBasicShape implements mxIShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		Shape shape = createShape(canvas, state);

@@ -24,6 +24,7 @@ public class mxMarkerRegistry
 	{
 		mxIMarker tmp = new mxIMarker()
 		{
+			@Override
 			public mxPoint paintMarker(mxGraphics2DCanvas canvas,
 					mxCellState state, String type, mxPoint pe, double nx,
 					double ny, double size, boolean source)
@@ -59,6 +60,7 @@ public class mxMarkerRegistry
 
 		registerMarker(mxConstants.ARROW_OPEN, new mxIMarker()
 		{
+			@Override
 			public mxPoint paintMarker(mxGraphics2DCanvas canvas,
 					mxCellState state, String type, mxPoint pe, double nx,
 					double ny, double size, boolean source)
@@ -81,6 +83,7 @@ public class mxMarkerRegistry
 		
 		registerMarker(mxConstants.ARROW_OVAL, new mxIMarker()
 		{
+			@Override
 			public mxPoint paintMarker(mxGraphics2DCanvas canvas,
 					mxCellState state, String type, mxPoint pe, double nx,
 					double ny, double size, boolean source)
@@ -104,6 +107,7 @@ public class mxMarkerRegistry
 		
 		registerMarker(mxConstants.ARROW_DIAMOND, new mxIMarker()
 		{
+			@Override
 			public mxPoint paintMarker(mxGraphics2DCanvas canvas,
 					mxCellState state, String type, mxPoint pe, double nx,
 					double ny, double size, boolean source)

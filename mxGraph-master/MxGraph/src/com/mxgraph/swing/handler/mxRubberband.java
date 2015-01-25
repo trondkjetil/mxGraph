@@ -76,6 +76,7 @@ public class mxRubberband implements MouseListener, MouseMotionListener
 		graphComponent.addListener(mxEvent.AFTER_PAINT, new mxIEventListener()
 		{
 
+			@Override
 			public void invoke(Object source, mxEventObject evt)
 			{
 				paintRubberband((Graphics) evt.getProperty("g"));
@@ -91,6 +92,7 @@ public class mxRubberband implements MouseListener, MouseMotionListener
 			 * @param e
 			 * @return
 			 */
+			@Override
 			public void keyPressed(KeyEvent e)
 			{
 				if (e.getKeyCode() == KeyEvent.VK_ESCAPE
@@ -214,6 +216,7 @@ public class mxRubberband implements MouseListener, MouseMotionListener
 	/**
 	 * 
 	 */
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
 		if (!e.isConsumed() && isEnabled() && isRubberbandTrigger(e)
@@ -227,6 +230,7 @@ public class mxRubberband implements MouseListener, MouseMotionListener
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		if (!e.isConsumed() && first != null)
@@ -291,6 +295,7 @@ public class mxRubberband implements MouseListener, MouseMotionListener
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		Rectangle rect = bounds;
@@ -309,6 +314,7 @@ public class mxRubberband implements MouseListener, MouseMotionListener
 	 * (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseClicked(MouseEvent arg0)
 	{
 		// empty
@@ -318,6 +324,7 @@ public class mxRubberband implements MouseListener, MouseMotionListener
 	 * (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseEntered(MouseEvent arg0)
 	{
 		// empty
@@ -327,6 +334,7 @@ public class mxRubberband implements MouseListener, MouseMotionListener
 	 * (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseExited(MouseEvent arg0)
 	{
 		// empty
@@ -336,6 +344,7 @@ public class mxRubberband implements MouseListener, MouseMotionListener
 	 * (non-Javadoc)
 	 * @see java.awt.event.MouseMotionListener#mouseMoved(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseMoved(MouseEvent arg0)
 	{
 		// empty

@@ -74,6 +74,7 @@ public class mxImageCanvas implements mxICanvas
 	/**
 	 * 
 	 */
+	@Override
 	public Object drawCell(mxCellState state)
 	{
 		return canvas.drawCell(state);
@@ -82,6 +83,7 @@ public class mxImageCanvas implements mxICanvas
 	/**
 	 * 
 	 */
+	@Override
 	public Object drawLabel(String label, mxCellState state, boolean html)
 	{
 		return canvas.drawLabel(label, state, html);
@@ -90,6 +92,7 @@ public class mxImageCanvas implements mxICanvas
 	/**
 	 * 
 	 */
+	@Override
 	public double getScale()
 	{
 		return canvas.getScale();
@@ -98,6 +101,7 @@ public class mxImageCanvas implements mxICanvas
 	/**
 	 * 
 	 */
+	@Override
 	public Point getTranslate()
 	{
 		return canvas.getTranslate();
@@ -106,6 +110,7 @@ public class mxImageCanvas implements mxICanvas
 	/**
 	 * 
 	 */
+	@Override
 	public void setScale(double scale)
 	{
 		canvas.setScale(scale);
@@ -114,6 +119,7 @@ public class mxImageCanvas implements mxICanvas
 	/**
 	 * 
 	 */
+	@Override
 	public void setTranslate(int dx, int dy)
 	{
 		canvas.setTranslate(dx, dy);

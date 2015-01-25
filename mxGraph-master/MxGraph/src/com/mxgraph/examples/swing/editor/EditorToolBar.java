@@ -113,6 +113,7 @@ public class EditorToolBar extends JToolBar
 			/**
 			 * 
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				String font = fontCombo.getSelectedItem().toString();
@@ -139,6 +140,7 @@ public class EditorToolBar extends JToolBar
 			/**
 			 * 
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				mxGraph graph = editor.getGraphComponent().getGraph();
@@ -198,6 +200,7 @@ public class EditorToolBar extends JToolBar
 			/**
 			 * 
 			 */
+			@Override
 			public void invoke(Object sender, mxEventObject evt)
 			{
 				ignoreZoomChange = true;
@@ -229,6 +232,7 @@ public class EditorToolBar extends JToolBar
 			/**
 			 * 
 			 */
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				mxGraphComponent graphComponent = editor.getGraphComponent();

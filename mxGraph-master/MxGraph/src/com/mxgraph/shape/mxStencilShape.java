@@ -15,12 +15,14 @@ import com.mxgraph.util.svg.AWTPolylineProducer;
 import com.mxgraph.util.svg.CSSConstants;
 import com.mxgraph.util.svg.ExtendedGeneralPath;
 import com.mxgraph.view.mxCellState;
+
 import java.awt.Color;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Line2D;
+import java.awt.geom.Path2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.RoundRectangle2D;
 import java.util.ArrayList;
@@ -551,12 +553,12 @@ public class mxStencilShape extends mxBasicShape
 				if (isPolygon(root.getNodeName()))
 				{
 					shape = AWTPolygonProducer.createShape(pointsString,
-							GeneralPath.WIND_NON_ZERO);
+							Path2D.WIND_NON_ZERO);
 				}
 				else
 				{
 					shape = AWTPolylineProducer.createShape(pointsString,
-							GeneralPath.WIND_NON_ZERO);
+							Path2D.WIND_NON_ZERO);
 				}
 
 				if (shape != null)
@@ -643,7 +645,7 @@ public class mxStencilShape extends mxBasicShape
 			{
 				String d = element.getAttribute("d");
 				Shape pathShape = AWTPathProducer.createShape(d,
-						GeneralPath.WIND_NON_ZERO);
+						Path2D.WIND_NON_ZERO);
 				return new svgShape(pathShape, styleMap);
 			}
 		}

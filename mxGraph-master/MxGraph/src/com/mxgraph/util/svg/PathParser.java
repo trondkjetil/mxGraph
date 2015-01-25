@@ -67,6 +67,7 @@ public class PathParser extends NumberParser
 		return pathHandler;
 	}
 
+	@Override
 	protected void doParse() throws ParseException, IOException
 	{
 		pathHandler.startPath();

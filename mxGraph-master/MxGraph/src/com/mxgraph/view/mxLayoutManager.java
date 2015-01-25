@@ -73,6 +73,7 @@ public class mxLayoutManager extends mxEventSource
 	 */
 	protected mxIEventListener undoHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			if (isEnabled())
@@ -87,6 +88,7 @@ public class mxLayoutManager extends mxEventSource
 	 */
 	protected mxIEventListener moveHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			if (isEnabled())

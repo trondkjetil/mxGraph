@@ -145,6 +145,7 @@ public class mxGraphTransferable implements Transferable, UIResource,
 	/**
 	 * 
 	 */
+	@Override
 	public DataFlavor[] getTransferDataFlavors()
 	{
 		DataFlavor[] richerFlavors = getRicherFlavors();
@@ -212,6 +213,7 @@ public class mxGraphTransferable implements Transferable, UIResource,
 	 *            the requested flavor for the data
 	 * @return boolean indicating whether or not the data flavor is supported
 	 */
+	@Override
 	public boolean isDataFlavorSupported(DataFlavor flavor)
 	{
 		DataFlavor[] flavors = getTransferDataFlavors();
@@ -241,6 +243,7 @@ public class mxGraphTransferable implements Transferable, UIResource,
 	 * @exception UnsupportedFlavorException
 	 *                if the requested data flavor is not supported.
 	 */
+	@Override
 	public Object getTransferData(DataFlavor flavor)
 			throws UnsupportedFlavorException, IOException
 	{

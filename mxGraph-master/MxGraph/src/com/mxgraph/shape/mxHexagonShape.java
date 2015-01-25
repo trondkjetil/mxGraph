@@ -15,6 +15,7 @@ public class mxHexagonShape extends mxBasicShape
 	/**
 	 * 
 	 */
+	@Override
 	public Shape createShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		Rectangle temp = state.getRectangle();

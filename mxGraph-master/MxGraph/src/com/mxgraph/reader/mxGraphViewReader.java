@@ -78,6 +78,7 @@ public abstract class mxGraphViewReader extends DefaultHandler
 	/* (non-Javadoc)
 	 * @see org.xml.sax.helpers.DefaultHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
 	 */
+	@Override
 	public void startElement(String uri, String localName, String qName,
 			Attributes atts) throws SAXException
 	{

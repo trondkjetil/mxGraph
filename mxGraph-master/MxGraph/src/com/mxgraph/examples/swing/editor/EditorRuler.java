@@ -153,6 +153,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	 */
 	protected transient mxIEventListener repaintHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			repaint();
@@ -287,6 +288,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	 * 
 	 * @return Returns the preferred size for the ruler.
 	 */
+	@Override
 	public Dimension getPreferredSize()
 	{
 		Dimension dim = graphComponent.getGraphControl().getPreferredSize();
@@ -307,6 +309,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	 * (non-Javadoc)
 	 * @see java.awt.dnd.DropTargetListener#dragEnter(java.awt.dnd.DropTargetDragEvent)
 	 */
+	@Override
 	public void dragEnter(DropTargetDragEvent arg0)
 	{
 		// empty
@@ -316,6 +319,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	 * (non-Javadoc)
 	 * @see java.awt.dnd.DropTargetListener#dragExit(java.awt.dnd.DropTargetEvent)
 	 */
+	@Override
 	public void dragExit(DropTargetEvent arg0)
 	{
 		// empty
@@ -325,6 +329,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	 * (non-Javadoc)
 	 * @see java.awt.dnd.DropTargetListener#dragOver(java.awt.dnd.DropTargetDragEvent)
 	 */
+	@Override
 	public void dragOver(final DropTargetDragEvent arg0)
 	{
 		updateMousePosition(arg0.getLocation());
@@ -334,6 +339,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	 * (non-Javadoc)
 	 * @see java.awt.dnd.DropTargetListener#drop(java.awt.dnd.DropTargetDropEvent)
 	 */
+	@Override
 	public void drop(DropTargetDropEvent arg0)
 	{
 		// empty
@@ -343,6 +349,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	 * (non-Javadoc)
 	 * @see java.awt.dnd.DropTargetListener#dropActionChanged(java.awt.dnd.DropTargetDragEvent)
 	 */
+	@Override
 	public void dropActionChanged(DropTargetDragEvent arg0)
 	{
 		// empty
@@ -351,6 +358,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	/*
 	 * (non-Javadoc)
 	 */
+	@Override
 	public void mouseMoved(MouseEvent e)
 	{
 		updateMousePosition(e.getPoint());
@@ -359,6 +367,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	/*
 	 * (non-Javadoc)
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		updateMousePosition(e.getPoint());
@@ -424,6 +433,7 @@ public class EditorRuler extends JComponent implements MouseMotionListener,
 	 * @param g
 	 *            The graphics to paint the ruler to.
 	 */
+	@Override
 	public void paintComponent(Graphics g)
 	{
 		mxGraph graph = graphComponent.getGraph();

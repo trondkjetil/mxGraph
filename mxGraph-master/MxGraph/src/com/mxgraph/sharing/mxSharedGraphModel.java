@@ -34,6 +34,7 @@ public class mxSharedGraphModel extends mxSharedState
 	 */
 	protected mxCodec codec = new mxCodec()
 	{
+		@Override
 		public Object lookup(String id)
 		{
 			return model.getCell(id);
@@ -84,6 +85,7 @@ public class mxSharedGraphModel extends mxSharedState
 	/**
 	 * Returns the initial state of the diagram.
 	 */
+	@Override
 	public String getState()
 	{
 		return mxXmlUtils.getXml(codec.encode(model));
@@ -92,6 +94,7 @@ public class mxSharedGraphModel extends mxSharedState
 	/**
 	 * 
 	 */
+	@Override
 	public synchronized void addDelta(String edits)
 	{
 		// Edits are not added to the history. They are sent straight out to
@@ -102,6 +105,7 @@ public class mxSharedGraphModel extends mxSharedState
 	/**
 	 * 
 	 */
+	@Override
 	protected String processEdit(Node node)
 	{
 		mxAtomicGraphModelChange[] changes = decodeChanges(node.getFirstChild());
@@ -130,6 +134,7 @@ public class mxSharedGraphModel extends mxSharedState
 	{
 		mxUndoableEdit edit = new mxUndoableEdit(this, significantRemoteChanges)
 		{
+			@Override
 			public void dispatch()
 			{
 				// LATER: Remove changes property (deprecated)

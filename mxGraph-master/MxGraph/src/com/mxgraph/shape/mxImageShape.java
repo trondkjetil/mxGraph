@@ -7,6 +7,7 @@ package com.mxgraph.shape;
 import java.awt.Color;
 import java.awt.Rectangle;
 
+import com.mxgraph.canvas.mxBasicCanvas;
 import com.mxgraph.canvas.mxGraphics2DCanvas;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.util.mxUtils;
@@ -22,6 +23,7 @@ public class mxImageShape extends mxRectangleShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		super.paintShape(canvas, state);
@@ -33,7 +35,7 @@ public class mxImageShape extends mxRectangleShape
 
 		canvas.drawImage(getImageBounds(canvas, state),
 				getImageForStyle(canvas, state),
-				mxGraphics2DCanvas.PRESERVE_IMAGE_ASPECT, flipH, flipV);
+				mxBasicCanvas.PRESERVE_IMAGE_ASPECT, flipH, flipV);
 	}
 
 	/**
@@ -47,6 +49,7 @@ public class mxImageShape extends mxRectangleShape
 	/**
 	 * 
 	 */
+	@Override
 	public boolean hasGradient(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		return false;
@@ -63,6 +66,7 @@ public class mxImageShape extends mxRectangleShape
 	/**
 	 * 
 	 */
+	@Override
 	public Color getFillColor(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		return mxUtils.getColor(state.getStyle(),
@@ -72,6 +76,7 @@ public class mxImageShape extends mxRectangleShape
 	/**
 	 * 
 	 */
+	@Override
 	public Color getStrokeColor(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		return mxUtils.getColor(state.getStyle(),

@@ -59,6 +59,7 @@ public class mxEdgeStyle
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxEdgeStyle.mxEdgeStyleFunction#apply(com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, java.util.List, java.util.List)
 		 */
+		@Override
 		public void apply(mxCellState state, mxCellState source,
 				mxCellState target, List<mxPoint> points, List<mxPoint> result)
 		{
@@ -184,6 +185,7 @@ public class mxEdgeStyle
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxEdgeStyle.mxEdgeStyleFunction#apply(com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, java.util.List, java.util.List)
 		 */
+		@Override
 		public void apply(mxCellState state, mxCellState source,
 				mxCellState target, List<mxPoint> points, List<mxPoint> result)
 		{
@@ -283,6 +285,7 @@ public class mxEdgeStyle
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxEdgeStyle.mxEdgeStyleFunction#apply(com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, java.util.List, java.util.List)
 		 */
+		@Override
 		public void apply(mxCellState state, mxCellState source,
 				mxCellState target, List<mxPoint> points, List<mxPoint> result)
 		{
@@ -355,6 +358,7 @@ public class mxEdgeStyle
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxEdgeStyle.mxEdgeStyleFunction#apply(com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, java.util.List, java.util.List)
 		 */
+		@Override
 		public void apply(mxCellState state, mxCellState source,
 				mxCellState target, List<mxPoint> points, List<mxPoint> result)
 		{
@@ -451,6 +455,7 @@ public class mxEdgeStyle
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxEdgeStyle.mxEdgeStyleFunction#apply(com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, java.util.List, java.util.List)
 		 */
+		@Override
 		public void apply(mxCellState state, mxCellState source,
 				mxCellState target, List<mxPoint> points, List<mxPoint> result)
 		{
@@ -548,6 +553,7 @@ public class mxEdgeStyle
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxEdgeStyle.mxEdgeStyleFunction#apply(com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, java.util.List, java.util.List)
 		 */
+		@Override
 		public void apply(mxCellState state, mxCellState source, mxCellState target, List<mxPoint> hints, List<mxPoint> result)
 		{
 			// Creates array of all way- and terminalpoints
@@ -788,6 +794,7 @@ public class mxEdgeStyle
 		/* (non-Javadoc)
 		 * @see com.mxgraph.view.mxEdgeStyle.mxEdgeStyleFunction#apply(com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, com.mxgraph.view.mxCellState, java.util.List, java.util.List)
 		 */
+		@Override
 		public void apply(mxCellState state, mxCellState source,
 				mxCellState target, List<mxPoint> points, List<mxPoint> result)
 		{

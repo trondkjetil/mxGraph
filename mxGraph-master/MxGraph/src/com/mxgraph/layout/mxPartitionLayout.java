@@ -79,6 +79,7 @@ public class mxPartitionLayout extends mxGraphLayout
 	 * (non-Javadoc)
 	 * @see com.mxgraph.layout.mxGraphLayout#move(java.lang.Object, double, double)
 	 */
+	@Override
 	public void moveCell(Object cell, double x, double y)
 	{
 		mxIGraphModel model = graph.getModel();
@@ -130,6 +131,7 @@ public class mxPartitionLayout extends mxGraphLayout
 	 * (non-Javadoc)
 	 * @see com.mxgraph.layout.mxIGraphLayout#execute(java.lang.Object)
 	 */
+	@Override
 	public void execute(Object parent)
 	{
 		mxIGraphModel model = graph.getModel();

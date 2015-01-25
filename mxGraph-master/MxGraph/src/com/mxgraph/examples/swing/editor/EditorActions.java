@@ -120,6 +120,7 @@ public class EditorActions
 				/**
 				 * 
 				 */
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					mxGraphComponent graphComponent = editor
@@ -163,6 +164,7 @@ public class EditorActions
 				/**
 				 * 
 				 */
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					mxGraphComponent graphComponent = editor
@@ -198,6 +200,7 @@ public class EditorActions
 				/**
 				 * 
 				 */
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					final mxGraphOutline outline = editor.getGraphOutline();
@@ -210,6 +213,7 @@ public class EditorActions
 						 * (non-Javadoc)
 						 * @see java.lang.Runnable#run()
 						 */
+						@Override
 						public void run()
 						{
 							if (outline.getParent() instanceof JSplitPane)
@@ -244,6 +248,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			BasicGraphEditor editor = getEditor(e);
@@ -277,6 +282,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -320,6 +326,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -354,6 +361,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -375,6 +383,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -416,6 +425,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -454,6 +464,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -482,6 +493,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -589,6 +601,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			BasicGraphEditor editor = getEditor(e);
@@ -716,6 +729,7 @@ public class EditorActions
 								.drawCells(graph, null, 1, null,
 										new CanvasFactory()
 										{
+											@Override
 											public mxICanvas createCanvas(
 													int width, int height)
 											{
@@ -833,6 +847,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -907,6 +922,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -946,6 +962,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -967,6 +984,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -999,6 +1017,7 @@ public class EditorActions
 				/**
 				 * 
 				 */
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					mxGraphComponent graphComponent = editor
@@ -1054,6 +1073,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof Component)
@@ -1140,6 +1160,7 @@ public class EditorActions
 				/**
 				 * 
 				 */
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					execute(target, fieldname, refresh);
@@ -1153,6 +1174,7 @@ public class EditorActions
 				 * (non-Javadoc)
 				 * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
 				 */
+				@Override
 				public void propertyChange(PropertyChangeEvent evt)
 				{
 					if (evt.getPropertyName().equalsIgnoreCase(fieldname))
@@ -1274,6 +1296,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			BasicGraphEditor editor = getEditor(e);
@@ -1314,6 +1337,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -1388,6 +1412,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -1424,6 +1449,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			BasicGraphEditor editor = getEditor(e);
@@ -1500,6 +1526,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			BasicGraphEditor editor = getEditor(e);
@@ -1533,6 +1560,7 @@ public class EditorActions
 							for (File f : fc.getSelectedFile().listFiles(
 									new FilenameFilter()
 									{
+										@Override
 										public boolean accept(File dir,
 												String name)
 										{
@@ -1657,6 +1685,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			BasicGraphEditor editor = getEditor(e);
@@ -1682,6 +1711,7 @@ public class EditorActions
 										+ " (.mxe, .png, .vdx)")
 						{
 
+							@Override
 							public boolean accept(File file)
 							{
 								String lcase = file.getName().toLowerCase();
@@ -1805,6 +1835,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = mxGraphActions.getGraph(e);
@@ -1840,6 +1871,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = mxGraphActions.getGraph(e);
@@ -1898,6 +1930,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = mxGraphActions.getGraph(e);
@@ -1942,6 +1975,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = mxGraphActions.getGraph(e);
@@ -1977,6 +2011,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof Component)
@@ -2027,6 +2062,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = mxGraphActions.getGraph(e);
@@ -2047,6 +2083,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			mxGraph graph = mxGraphActions.getGraph(e);
@@ -2096,6 +2133,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -2127,6 +2165,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -2172,6 +2211,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -2202,6 +2242,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -2231,6 +2272,7 @@ public class EditorActions
 		/**
 		 * 
 		 */
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)

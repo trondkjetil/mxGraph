@@ -822,7 +822,7 @@ public class mxGraphGenerator
 			double y = 0;
 			double currRatio = ((double) i / (double) numVertexesInPerimeter);
 			currRatio = currRatio * 2;
-			currRatio = currRatio * (double) Math.PI;
+			currRatio = currRatio * Math.PI;
 			x = Math.round(centerX + Math.round(graphSize * Math.sin(currRatio) / 2));
 			y = Math.round(centerY - Math.round(graphSize * Math.cos(currRatio) / 2));
 			Object currVertex = vertices[i];
@@ -1020,11 +1020,11 @@ public class mxGraphGenerator
 				if (isBranchSizeEven && j == middleIndex - 1)
 				{
 					//full size
-					currRatio = ((double) i - (0.0005f * graphSize / Math.pow(numVerticesInBranch, 1))) / (double) numVertexesInPerimeter;
+					currRatio = (i - (0.0005f * graphSize / Math.pow(numVerticesInBranch, 1))) / numVertexesInPerimeter;
 				}
 				else if (isBranchSizeEven && j == middleIndex)
 				{
-					currRatio = ((double) i + (0.0005f * graphSize / Math.pow(numVerticesInBranch, 1))) / (double) numVertexesInPerimeter;
+					currRatio = (i + (0.0005f * graphSize / Math.pow(numVerticesInBranch, 1))) / numVertexesInPerimeter;
 				}
 				else if (!isBranchSizeEven && currSize == graphSize)
 				{
@@ -1035,17 +1035,17 @@ public class mxGraphGenerator
 					if (j + 1 < middleIndex)
 					{
 						//before middle
-						currRatio = ((double) (i - 1f / Math.pow(currSize, 0.25) + 0.00000000000015f * Math.pow(currSize, 4)) / (double) numVertexesInPerimeter);
+						currRatio = ((i - 1f / Math.pow(currSize, 0.25) + 0.00000000000015f * Math.pow(currSize, 4)) / numVertexesInPerimeter);
 					}
 					else
 					{
 						//after middle
-						currRatio = ((double) (i + 1f / Math.pow(currSize, 0.25) - 0.00000000000015f * Math.pow(currSize, 4)) / (double) numVertexesInPerimeter);
+						currRatio = ((i + 1f / Math.pow(currSize, 0.25) - 0.00000000000015f * Math.pow(currSize, 4)) / numVertexesInPerimeter);
 					}
 				}
 
 				currRatio = currRatio * 2;
-				currRatio = currRatio * (double) Math.PI;
+				currRatio = currRatio * Math.PI;
 				x = Math.round(centerX + Math.round(currSize * Math.sin(currRatio) / 2));
 				y = Math.round(centerY - Math.round(currSize * Math.cos(currRatio) / 2));
 				//shoot
@@ -1156,7 +1156,7 @@ public class mxGraphGenerator
 	 */
 	public void getSimpleRandomTree(mxAnalysisGraph aGraph, int vertexCount)
 	{
-		int edgeCount = (int) Math.round(vertexCount * 2);
+		int edgeCount = Math.round(vertexCount * 2);
 		this.getSimpleRandomGraph(aGraph, vertexCount, edgeCount, false, false, true);
 
 		//still need to remove surplus edges

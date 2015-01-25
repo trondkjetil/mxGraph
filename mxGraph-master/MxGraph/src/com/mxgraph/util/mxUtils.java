@@ -1103,6 +1103,7 @@ public class mxUtils
 	{
 		SortedSet<Object> result = new TreeSet<Object>(new Comparator<Object>()
 		{
+			@Override
 			public int compare(Object o1, Object o2)
 			{
 				int comp = mxCellPath.compare(mxCellPath.create((mxICell) o1),
@@ -1154,6 +1155,7 @@ public class mxUtils
 	 * @return Returns the stylename from the given formatted string.
 	 * @deprecated Use <code>mxStyleUtils.getStylename(String)</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static String getStylename(String style)
 	{
 		return mxStyleUtils.getStylename(style);
@@ -1168,6 +1170,7 @@ public class mxUtils
 	 * @return Returns the stylename from the given formatted string.
 	 * @deprecated Use <code>mxStyleUtils.getStylenames(String)</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static String[] getStylenames(String style)
 	{
 		return mxStyleUtils.getStylenames(style);
@@ -1179,6 +1182,7 @@ public class mxUtils
 	 * style, otherwise it returns the index of the first character.
 	 * @deprecated Use <code>mxStyleUtils.indexOfStylename(String, String)</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static int indexOfStylename(String style, String stylename)
 	{
 		return mxStyleUtils.indexOfStylename(style, stylename);
@@ -1189,6 +1193,7 @@ public class mxUtils
 	 * style.
 	 * @deprecated Use <code>mxStyleUtils.removeAllStylenames(String)</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static String removeAllStylenames(String style)
 	{
 		return mxStyleUtils.removeAllStylenames(style);
@@ -1208,6 +1213,7 @@ public class mxUtils
 	 *            New value for the given key.
 	 * @deprecated Use <code>mxStyleUtils.setCellStyles(mxIGraphModel, Object[], String, String)</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static void setCellStyles(mxIGraphModel model, Object[] cells,
 			String key, String value)
 	{
@@ -1228,6 +1234,7 @@ public class mxUtils
 	 * @return Returns the new style.
 	 * @deprecated Use <code>mxStyleUtils.setStyle(String, String, String)</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static String setStyle(String style, String key, String value)
 	{
 		return mxStyleUtils.setStyle(style, key, value);
@@ -1258,6 +1265,7 @@ public class mxUtils
 	 *            Optional boolean value for the flag.
 	 * @deprecated Use <code>mxStyleUtils.setCellStyleFlags(mxIGraphModel, Object[],String, int, Boolean)</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static void setCellStyleFlags(mxIGraphModel model, Object[] cells,
 			String key, int flag, Boolean value)
 	{
@@ -1278,6 +1286,7 @@ public class mxUtils
 	 *            Optional boolean value for the given flag.
 	 * @deprecated Use <code>mxStyleUtils.setStyleFlag(String, String, int, Boolean)</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static String setStyleFlag(String style, String key, int flag,
 			Boolean value)
 	{
@@ -2069,6 +2078,7 @@ public class mxUtils
 	 * @return Returns a new DOM document.
 	 * @deprecated Use <code>mxDomUtils.createDocument</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static Document createDocument()
 	{
 		return mxDomUtils.createDocument();
@@ -2078,6 +2088,7 @@ public class mxUtils
 	 * Creates a new SVG document for the given width and height.
 	 * @deprecated Use <code>mxDomUtils.createSvgDocument(int, int)</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static Document createSvgDocument(int width, int height)
 	{
 		return mxDomUtils.createSvgDocument(width, height);
@@ -2087,6 +2098,7 @@ public class mxUtils
 	 * 
 	 * @deprecated Use <code>mxDomUtils.createVmlDocument</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static Document createVmlDocument()
 	{
 		return mxDomUtils.createVmlDocument();
@@ -2096,6 +2108,7 @@ public class mxUtils
 	 * Returns a document with a HTML node containing a HEAD and BODY node.
 	 * @deprecated Use <code>mxDomUtils.createHtmlDocument</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static Document createHtmlDocument()
 	{
 		return mxDomUtils.createHtmlDocument();
@@ -2318,6 +2331,7 @@ public class mxUtils
 	 * @return Returns a new XML document.
 	 * @deprecated Use <code>mxXmlUtils.parseXml</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static Document parseXml(String xml)
 	{
 		return mxXmlUtils.parseXml(xml);
@@ -2429,6 +2443,7 @@ public class mxUtils
 	 * @return Returns an XML string.
 	 * @deprecated Use <code>mxXmlUtils.getXml(Node)</code> (Jan 2012)
 	 */
+	@Deprecated
 	public static String getXml(Node node)
 	{
 		return mxXmlUtils.getXml(node);

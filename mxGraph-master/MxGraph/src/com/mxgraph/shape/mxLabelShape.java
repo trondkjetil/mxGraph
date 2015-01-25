@@ -18,6 +18,7 @@ public class mxLabelShape extends mxImageShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		super.paintShape(canvas, state);
@@ -62,6 +63,7 @@ public class mxLabelShape extends mxImageShape
 	/**
 	 * 
 	 */
+	@Override
 	public Rectangle getImageBounds(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		Map<String, Object> style = state.getStyle();
@@ -121,6 +123,7 @@ public class mxLabelShape extends mxImageShape
 	/**
 	 * 
 	 */
+	@Override
 	public Color getFillColor(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		return mxUtils.getColor(state.getStyle(), mxConstants.STYLE_FILLCOLOR);
@@ -129,6 +132,7 @@ public class mxLabelShape extends mxImageShape
 	/**
 	 * 
 	 */
+	@Override
 	public Color getStrokeColor(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		return mxUtils
@@ -138,6 +142,7 @@ public class mxLabelShape extends mxImageShape
 	/**
 	 * 
 	 */
+	@Override
 	public boolean hasGradient(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		return true;

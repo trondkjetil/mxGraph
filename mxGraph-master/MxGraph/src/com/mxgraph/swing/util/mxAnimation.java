@@ -85,6 +85,7 @@ public class mxAnimation extends mxEventSource
 			timer = new Timer(delay, new ActionListener()
 			{
 
+				@Override
 				public void actionPerformed(ActionEvent e)
 				{
 					updateAnimation();

@@ -14,6 +14,7 @@ public class mxSwimlaneShape extends mxBasicShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		int start = (int) Math.round(mxUtils.getInt(state.getStyle(),
@@ -61,6 +62,7 @@ public class mxSwimlaneShape extends mxBasicShape
 	/**
 	 * 
 	 */
+	@Override
 	protected mxRectangle getGradientBounds(mxGraphics2DCanvas canvas,
 			mxCellState state)
 	{

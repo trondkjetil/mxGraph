@@ -465,6 +465,7 @@ public class mxGraphHierarchyModel
 
 		visit(new mxGraphHierarchyModel.CellVisitor()
 		{
+			@Override
 			public void visit(mxGraphHierarchyNode parent,
 					mxGraphHierarchyNode cell,
 					mxGraphHierarchyEdge connectingEdge, int layer, int seen)

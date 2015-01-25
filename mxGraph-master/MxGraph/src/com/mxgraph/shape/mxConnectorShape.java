@@ -22,6 +22,7 @@ public class mxConnectorShape extends mxBasicShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		if (state.getAbsolutePointCount() > 1

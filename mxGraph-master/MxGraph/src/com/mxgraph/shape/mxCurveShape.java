@@ -50,6 +50,7 @@ public class mxCurveShape extends mxConnectorShape
 	/**
 	 * 
 	 */
+	@Override
 	public void paintShape(mxGraphics2DCanvas canvas, mxCellState state)
 	{
 		Object keyStrokeHint = canvas.getGraphics().getRenderingHint(
@@ -67,6 +68,7 @@ public class mxCurveShape extends mxConnectorShape
 	/**
 	 * 
 	 */
+	@Override
 	protected void paintPolyline(mxGraphics2DCanvas canvas,
 			List<mxPoint> points, Map<String, Object> style)
 	{
@@ -104,6 +106,7 @@ public class mxCurveShape extends mxConnectorShape
 	 * @param markerSize the scaled maximum length of the marker
 	 * @return a line describing the vector the marker should be drawn along
 	 */
+	@Override
 	protected mxLine getMarkerVector(List<mxPoint> points, boolean source,
 			double markerSize)
 	{

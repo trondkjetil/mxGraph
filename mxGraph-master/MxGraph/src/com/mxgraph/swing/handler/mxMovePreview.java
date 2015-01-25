@@ -109,6 +109,7 @@ public class mxMovePreview extends mxEventSource
 		// Installs the paint handler
 		graphComponent.addListener(mxEvent.AFTER_PAINT, new mxIEventListener()
 		{
+			@Override
 			public void invoke(Object sender, mxEventObject evt)
 			{
 				Graphics g = (Graphics) evt.getProperty("g");
@@ -320,6 +321,7 @@ public class mxMovePreview extends mxEventSource
 	{
 		return new mxCellStatePreview(graphComponent, isClonePreview())
 		{
+			@Override
 			protected float getOpacityForCell(Object cell)
 			{
 				if (isCellOpaque(cell))

@@ -144,6 +144,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 	 */
 	protected transient mxIEventListener resetHandler = new mxIEventListener()
 	{
+		@Override
 		public void invoke(Object source, mxEventObject evt)
 		{
 			reset();
@@ -161,6 +162,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 		// Installs the paint handler
 		graphComponent.addListener(mxEvent.AFTER_PAINT, new mxIEventListener()
 		{
+			@Override
 			public void invoke(Object sender, mxEventObject evt)
 			{
 				Graphics g = (Graphics) evt.getProperty("g");
@@ -179,6 +181,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 
 		graphComponent.addPropertyChangeListener(new PropertyChangeListener()
 		{
+			@Override
 			public void propertyChange(PropertyChangeEvent evt)
 			{
 				if (evt.getPropertyName().equals("graph"))
@@ -199,6 +202,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 			// Overrides to return cell at location only if valid (so that
 			// there is no highlight for invalid cells that have no error
 			// message when the mouse is released)
+			@Override
 			protected Object getCell(MouseEvent e)
 			{
 				Object cell = super.getCell(e);
@@ -230,6 +234,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 			}
 
 			// Sets the highlight color according to isValidConnection
+			@Override
 			protected boolean isValidState(mxCellState state)
 			{
 				if (isConnecting())
@@ -244,6 +249,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 
 			// Overrides to use marker color only in highlight mode or for
 			// target selection
+			@Override
 			protected Color getMarkerColor(MouseEvent e, mxCellState state,
 					boolean isValid)
 			{
@@ -253,6 +259,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 
 			// Overrides to use hotspot only for source selection otherwise
 			// intersects always returns true when over a cell
+			@Override
 			protected boolean intersects(mxCellState state, MouseEvent e)
 			{
 				if (!isHighlighting() || isConnecting())
@@ -552,6 +559,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
 		if (!graphComponent.isForceMarqueeEvent(e)
@@ -580,6 +588,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseMoved(MouseEvent e)
 	{
 		mouseDragged(e);
@@ -635,6 +644,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		if (!e.isConsumed() && graphComponent.isEnabled() && isEnabled())
@@ -674,6 +684,7 @@ public class mxConnectionHandler extends mxMouseAdapter
 	/**
 	 * 
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		if (isActive())

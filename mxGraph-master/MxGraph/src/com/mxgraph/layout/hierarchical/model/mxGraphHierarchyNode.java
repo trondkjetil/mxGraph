@@ -70,6 +70,7 @@ public class mxGraphHierarchyNode extends mxGraphAbstractHierarchyCell
 	 * @param layer the layer this cell is on
 	 * @return the cells this cell connects to on the next layer up
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<mxGraphAbstractHierarchyCell> getNextLayerConnectedCells(int layer)
 	{
@@ -105,6 +106,7 @@ public class mxGraphHierarchyNode extends mxGraphAbstractHierarchyCell
 	 * @param layer the layer this cell is on
 	 * @return the cells this cell connects to on the next layer down
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<mxGraphAbstractHierarchyCell> getPreviousLayerConnectedCells(int layer)
 	{
@@ -139,6 +141,7 @@ public class mxGraphHierarchyNode extends mxGraphAbstractHierarchyCell
 	 * 
 	 * @return whether or not this cell is an edge
 	 */
+	@Override
 	public boolean isEdge()
 	{
 		return false;
@@ -148,6 +151,7 @@ public class mxGraphHierarchyNode extends mxGraphAbstractHierarchyCell
 	 * 
 	 * @return whether or not this cell is a node
 	 */
+	@Override
 	public boolean isVertex()
 	{
 		return true;
@@ -160,6 +164,7 @@ public class mxGraphHierarchyNode extends mxGraphAbstractHierarchyCell
 	 *            the layer relating to a specific entry into temp
 	 * @return the value for that layer
 	 */
+	@Override
 	public int getGeneralPurposeVariable(int layer)
 	{
 		return temp[0];
@@ -173,6 +178,7 @@ public class mxGraphHierarchyNode extends mxGraphAbstractHierarchyCell
 	 * @param value
 	 *            the value for that layer
 	 */
+	@Override
 	public void setGeneralPurposeVariable(int layer, int value)
 	{
 		temp[0] = value;
