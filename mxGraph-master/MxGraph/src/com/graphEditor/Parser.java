@@ -1,6 +1,7 @@
 package com.graphEditor;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -15,7 +16,6 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.tdb.TDBFactory;
-import com.hp.hpl.jena.util.FileManager;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxGeometry;
 import com.mxgraph.swing.mxGraphComponent;
@@ -30,9 +30,6 @@ public class Parser {
 	private Relations relation;
 	private ArrayList<Relations> relationCollection;
 	public final static String base = "http://www.w3.org/1999#";
-	public final static String b1 = "http://www.w3.org/1999/1#";
-	public final static String b2 = "http://www.w3.org/1999/2#";
-	public final static String b3 = "http://www.w3.org/1999/3#";
 
 	public Parser() {
 	}
@@ -42,61 +39,52 @@ public class Parser {
 		model = dataset.getDefaultModel();
 	}
 
-	public void loadDataSet(File fil) {
+	public void loadDataSet(File fil) throws FileNotFoundException {
 		model = ModelFactory.createDefaultModel();
 		dataset = TDBFactory.createDataset("db");
 		model = dataset.getDefaultModel();
+		
+		InputStream in = new FileInputStream(fil.getAbsolutePath());  //  FileManager.get().open(fil.getAbsolutePath());
 
-		InputStream in = FileManager.get().open(fil.getAbsolutePath());
-		if (in == null) {
-			throw new IllegalArgumentException("File: not found");
-		}
-
-		model.read(in, "", "RDF/XML");
+		model.read(in, base, "RDF/XML");
 		ontModel = ModelFactory.createDefaultModel();
-		ontModel.add(model);
 		ontModel = dataset.getDefaultModel();
-		// RDFDataMgr.write(System.out, ontModel, Lang.TURTLE) ;
+		ontModel.setNsPrefix("abc", base);
+		model.setNsPrefix("abc", base);
 
 	}
 
 	public void addXmlConstructToModel(String constructName,
 			ArrayList<Object> concepts, mxGraphComponent graphComponent) {
-		ontModel.setNsPrefix("abc", base);
+		    ontModel.setNsPrefix("abc", base);
+		
 		Resource construct = ontModel.createResource(base + constructName);
-		Property constructHasConcept = ontModel.createProperty(base
-				+ "hasConceptRole");
-		Property conceptHasGeometry = ontModel.createProperty(base
-				+ "hasGeometry");
+		Property constructHasConcept = ontModel.createProperty(base+ "hasConceptRole");
+		Property conceptHasGeometry = ontModel.createProperty(base+ "hasGeometry");
+		construct.removeAll(conceptHasGeometry);
+		construct.removeAll(constructHasConcept);
+		construct.removeProperties();
 
-		for (Object con : concepts) {
+		 for (Object con : concepts) {
 			if (con != null) {
 				String cell = ((mxCell) con).getId();
-				String geometry = graphComponent.getGraph()
-						.getCellGeometry(con).toString();
+				String geometry = graphComponent.getGraph().getCellGeometry(con).toString();
 				geometry = geometry.replace("com.mxgraph.model.mxGeometry", "");
 				cell = cell.replaceAll("\n", "");
 				cell = cell.replaceAll(" ", "");
+				
 				Resource conceptRole = ontModel.createResource(base + cell);
+				conceptRole.removeAll(conceptHasGeometry);
+				conceptRole.removeAll(constructHasConcept);
+				conceptRole.removeProperties();
 				Literal conceptRoleGeometry = ontModel.createLiteral(geometry);
-				conceptRole
-						.addProperty(conceptHasGeometry, conceptRoleGeometry);
+				conceptRole.addProperty(conceptHasGeometry, conceptRoleGeometry);
 				construct.addProperty(constructHasConcept, conceptRole);
 
 			}
 		}
-
-		try {
-			File fil = new File("ontology.rdf-xml.owl");
-			File file = new File("ontology.triples.owl");
-			fil.delete();
-			file.delete();
+		
 			ontModel.add(model);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
 	}
 
 	public HashMap<String, mxGeometry> getGeometries(ArrayList<Object> concepts) {
@@ -108,12 +96,7 @@ public class Parser {
 			String input = ((mxCell) n).getId();
 			input = input.replaceAll("\n", "");
 			String result = "";
-			result = Queries.queryFindConceptGeometry(input, ontModel, dataset);
-			if (result == null) {
-				result = Queries.queryFindConceptGeometryAlternative(input,
-						ontModel, dataset);
-			}
-
+		result = Queries.queryFindConceptGeometry(input,ontModel, dataset);
 			if (result != "") {
 				result = result.replaceAll("\"", "").replaceAll("[^\\d.,]", "")
 						.replaceAll("=", "");
@@ -200,6 +183,7 @@ public class Parser {
 	public void saveModel(File file) throws FileNotFoundException {
 		model.getWriter("RDF/XML").write(model,
 				new FileOutputStream(file + ".owl"), base);
+		
 	}
 
 }

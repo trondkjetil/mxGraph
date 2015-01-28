@@ -13,7 +13,7 @@ public class Queries {
 
 	
 	
-public static String queryFindConceptGeometryAlternative(String input,Model ontModel,Dataset dataset) {
+public static String queryFindConceptGeometry(String input,Model ontModel,Dataset dataset) {
 	String output = "";
 		Query selectQuery = QueryFactory.create(""
 						+ "SELECT * WHERE {"
@@ -30,27 +30,6 @@ public static String queryFindConceptGeometryAlternative(String input,Model ontM
 		return output;
 	}
 
-	
-public static String queryFindConceptGeometry(String input,Model ontModel,Dataset dataset) {
-	 String workingDir = System.getProperty("user.dir");
-	 workingDir = workingDir.replace("\\", "/");
-	 String output = "";
-		Query selectQuery = QueryFactory.create(""
-						+ "SELECT * WHERE {"
-						+ "<file:///"+workingDir+"/#"+input+ ">"   +  " <http://www.w3.org/1999#hasGeometry> ?s "
-						 //<file:///C:/Users/Trond/Desktop/o/MxGraph/#  <http://www.w3.org/1999#"+input+"> C:/Users/Trond/Desktop/o/MxGraph/#"+input+">"
-						+"}");
-		QueryExecution queryExecution = QueryExecutionFactory.create(
-				selectQuery, dataset);
-		ResultSet resultSet = queryExecution.execSelect();
-
-		while (resultSet.hasNext()) {
-			QuerySolution res = resultSet.nextSolution();
-			output = output + "\n" + res.toString();
-		}
-		
-		return output;
-	}
 
 
 	public static String queryFindParentOfParent(String input, Dataset dataset) {
